@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ConsoleTest : MonoBehaviour
 {
   public TextMeshPro debugMessage;
-  public string message = "Welcome to Devforward.io! If we got this far, yo mama is - a really cool person, maybe.";
+ public string message = "Welcome to Devforward.io! If we got this far, yo mama is - a really cool person, maybe.";
   public int maxMessages = 50;
   private int currentMessages = 0;
 
