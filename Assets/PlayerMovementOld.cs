@@ -3,10 +3,11 @@ using UnityEngine;
 public class PlayerMovementOld : MonoBehaviour
 {
   public float moveSpeed = 10f;
+  public float defaultSpeed = 10f;
 
   void Start()
     {
-      
+      moveSpeed = defaultSpeed;
     }
 
     void Update()

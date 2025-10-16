@@ -1,3 +1,10 @@
 {
-  "dotnet.preferCSharpExtension": true
+  "dotnet.preferCSharpExtension": true,
+  // Always open Markdown files in preview by default
+  "workbench.editor.enablePreview": true,
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
+  // When clicking markdown links, prefer opening in preview
+  "markdown.preview.openMarkdownLinks": "inPreview"
 }
