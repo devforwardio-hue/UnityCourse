@@ -3,7 +3,7 @@ using UnityEngine;
 public class Buff_Jump : MonoBehaviour
 {
   public float currentTime = 0;// where to put?
-  public float maxTime = 10;
+  public float maxTime = 10f;
   public float powerValue = 0; // no longer need, but future ?
   public bool isActive = false;
   public JumpingOld jumpingOld;
@@ -35,7 +35,7 @@ public class Buff_Jump : MonoBehaviour
       Debug.Log("Jump Timer start");
       currentTime = Time.time;
 
-      if (currentTime > maxTime)
+      if (currentTime >= maxTime)
       {
         jumpingOld.jumpForce = jumpingOld.defaultForce;
         isActive = false;

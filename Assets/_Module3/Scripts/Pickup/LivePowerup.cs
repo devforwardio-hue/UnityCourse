@@ -42,9 +42,6 @@ public class LivePowerup : MonoBehaviour
     if (col.CompareTag("Player"))
     {
 
-
-
-
       switch (type)
       {
         case PowerupType.Movement:
@@ -88,10 +85,17 @@ public class LivePowerup : MonoBehaviour
 
         case PowerupType.Scale:
         {
+            if (buff_scaleScript != null)
+            { 
+            buff_scaleScript.isActive = true;
+            Transform mikeTransform = col.transform;
+            mikeTransform.localScale = buff_scaleScript.maxScale;
+            }
+            
             //in crease the players scale on x, y, and z, to the powerup value.
             //apply the buff_scaleScript management details
             Debug.Log("Scale");
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
             break;
         }
         default:
