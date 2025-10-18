@@ -16,6 +16,7 @@ public class LivePowerup : MonoBehaviour
   private Buff_Movement buff_movementScript;
   private Buff_Jump buff_jumpScript;
   private Buff_Scale buff_scaleScript;
+//maxScale = 2,2,2
 
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -85,13 +86,19 @@ public class LivePowerup : MonoBehaviour
 
         case PowerupType.Scale:
         {
+            Transform mikeTransform = col.transform;
+            if (mikeTransform != null) 
+            {
+                mikeTransform.localScale = new(powerValue, powerValue, powerValue);
+            }
+
             if (buff_scaleScript != null)
             { 
-            buff_scaleScript.isActive = true;
-            Transform mikeTransform = col.transform;
-            mikeTransform.localScale = buff_scaleScript.maxScale;
+                buff_scaleScript.isActive = true;
+                //I want to set the time to maxtime
+                //what is the time? what needs it?
+                buff_scaleScript.maxTime = maxTime + Time.time;
             }
-            
             //in crease the players scale on x, y, and z, to the powerup value.
             //apply the buff_scaleScript management details
             Debug.Log("Scale");

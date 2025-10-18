@@ -4,25 +4,51 @@ using UnityEngine.UIElements;
 
 public class Buff_Scale : MonoBehaviour
 {
-    //public float maxTime = 10f;
-    public Vector3 deafaultScale = new Vector3(1f,1f,1f);
-    public Vector3 maxScale = new Vector3(3f, 3f, 3f);
+    public float currentTime = 0;// where to put?
+    public float maxTime = 10f;
+    public float powerValue = 0; // no longer need, but future ?
     public bool isActive = false;
+    public Transform playerTransform;
+    Vector3 defaultScale = new(1, 1, 1);
 
-    //make sure it returns to the default scale, which is always the default object scale of 1.
+
     private void Awake()
     {
-        Debug.Log(isActive);
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     void Start()
     {
-
+        if (playerTransform != null)
+        {
+            Debug.Log("Transform found!");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        StartTimer();
 
+    }
+
+    public void StartTimer()
+    {
+        if (isActive)
+        {
+            Debug.Log("Scale timer start");
+            currentTime = Time.time;
+
+            if (currentTime >= maxTime)
+            {
+                playerTransform.localScale = defaultScale;
+                isActive = false;
+                Debug.Log("Jump Time is out");
+            }
+            else
+            {
+
+            }
+        }
     }
 
 }

@@ -302,28 +302,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cbc14ee0de11d344a784ffff7ef546b, type: 3}
---- !u!114 &493718665 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6698941146535242794, guid: 6b65fb8b96850a346bb731a85e94a01d, type: 3}
-  m_PrefabInstance: {fileID: 202451501}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59195892d8ba669499da3768f4690036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementOld
---- !u!114 &493718666 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3326616898497241100, guid: 6b65fb8b96850a346bb731a85e94a01d, type: 3}
-  m_PrefabInstance: {fileID: 202451501}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83a4d62b3cd3f134b988deff92b47a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JumpingOld
 --- !u!1 &529112047
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,10 +311,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529112051}
-  - component: {fileID: 529112048}
   - component: {fileID: 529112055}
   - component: {fileID: 529112054}
-  - component: {fileID: 529112052}
+  - component: {fileID: 529112056}
   m_Layer: 0
   m_Name: BuffManager
   m_TagString: Untagged
@@ -344,21 +321,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &529112048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529112047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7af18abde07648428fac686cf2e6999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Buff_Scale
-  deafaultScale: {x: 1, y: 1, z: 1}
-  maxScale: {x: 2, y: 2, z: 2}
-  isActive: 0
 --- !u!4 &529112051
 Transform:
   m_ObjectHideFlags: 0
@@ -374,18 +336,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &529112052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529112047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0f30015211b53f48ae246af8e3b50d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBuffTimer
 --- !u!114 &529112054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +352,7 @@ MonoBehaviour:
   maxTime: 10
   powerValue: 0
   isActive: 0
-  playerMovementOld: {fileID: 493718665}
+  playerMovementOld: {fileID: 0}
 --- !u!114 &529112055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +369,24 @@ MonoBehaviour:
   maxTime: 10
   powerValue: 0
   isActive: 0
-  jumpingOld: {fileID: 493718666}
+  jumpingOld: {fileID: 0}
+--- !u!114 &529112056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529112047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7af18abde07648428fac686cf2e6999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buff_Scale
+  currentTime: 0
+  maxTime: 10
+  powerValue: 0
+  isActive: 0
+  playerTransform: {fileID: 0}
 --- !u!1001 &686502722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,9 +400,13 @@ PrefabInstance:
       value: Pow_Scale
       objectReference: {fileID: 0}
     - target: {fileID: 5947327619356877920, guid: 6b57894519eaa2642b854882d4e4398d, type: 3}
+      propertyPath: maxTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947327619356877920, guid: 6b57894519eaa2642b854882d4e4398d, type: 3}
       propertyPath: buffManagerObject
       value: 
-      objectReference: {fileID: 529112047}
+      objectReference: {fileID: 0}
     - target: {fileID: 6002903581746644272, guid: 6b57894519eaa2642b854882d4e4398d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.8678656

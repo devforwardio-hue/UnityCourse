@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LivePowerup
   type: 2
-  powerValue: 2
-  maxTime: 0
+  powerValue: 4
+  maxTime: 15
   buffManagerObject: {fileID: 0}
