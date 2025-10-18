@@ -78,3 +78,9 @@ GameConfig cfg = new GameConfig();
 - Class: the definition/blueprint (what an Enemy is and can do).
 - Instance: a concrete object created from a class (Enemy e1, e2...).
 - Namespace: a container for class names to avoid clashes (UnityEngine, System, YourCompany.YourGame).
+
+When NOT to use (use instead):
+
+- Class instance that holds only data and is frequently copied → consider a `struct` (value type) if it’s small and immutable-ish.
+- Deeply nested namespaces for few types → keep namespaces shallow for readability.
+- Excessive singletons/static state → prefer explicit dependencies (constructor/field injection) to improve testability.

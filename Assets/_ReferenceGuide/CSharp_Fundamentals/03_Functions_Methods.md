@@ -34,6 +34,12 @@ When you want to group a set of instructions to be reused or called by other scr
   private void Heal() { ... }
   ```
 
+When NOT to use (use instead):
+
+- Don’t make everything `public` just to “access it later” → keep methods `private` by default; expose a minimal `public` API.
+- Need external control with validation or events → expose a `public` method that wraps `private` logic, or use C# properties/events.
+- Pure helpers with no instance state → consider `static` methods in a utility class.
+
 ---
 
 ### Parameters (passing information)
@@ -58,6 +64,12 @@ Notes:
 - In C#, parameters are passed by value by default. For value types (like int, float), changes inside the method don’t affect the caller’s variable.
 - For reference types (like classes), the reference is passed by value. You can modify the object’s fields, but reassigning the parameter won’t affect the caller’s variable unless you use `ref`.
 - Use `ref` or `out` for advanced cases where the method should modify the caller’s variable itself.
+
+When NOT to use (use instead):
+
+- Too many parameters (3–4+) → group into a small config class/struct or expose fields/properties on the class.
+- Passing many values by `ref/out` → prefer returning a result object or encapsulating state in a class.
+- Repeatedly passing dependencies (player, input, logger) → inject/store them once as fields.
 
 ```csharp
 // Example: reference type behavior

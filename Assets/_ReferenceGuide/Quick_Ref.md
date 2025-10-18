@@ -26,6 +26,13 @@ Fast lookups for key C# fundamentals used in this course. We’ll keep expanding
 | OnCollisionEnter/Stay/Exit | Solid collider events        | Impacts, physics interactions   |
 | OnTriggerEnter/Stay/Exit   | Sensor/zone events           | Pickups, areas, detection       |
 
+| Concept          | Think of it as        | Common Use                              |
+| ---------------- | --------------------- | --------------------------------------- |
+| `Time.time`      | Global stopwatch      | Durations, cooldowns, timestamps        |
+| `Time.deltaTime` | Time since last frame | Frame-rate independent movement/anim    |
+| Enum             | Named set of options  | States, types, Inspector dropdowns      |
+| Switch           | Multi-branch selector | Clear branching on enum/int/string/char |
+
 Notes:
 
 - For deeper explanations and examples, use the dedicated pages listed in the [Reference Index](README.md).
