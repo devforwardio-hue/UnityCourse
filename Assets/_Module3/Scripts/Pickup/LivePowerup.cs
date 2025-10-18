@@ -87,11 +87,19 @@ public class LivePowerup : MonoBehaviour
         }
 
         case PowerupType.Scale:
-        {
-            //in crease the players scale on x, y, and z, to the powerup value.
-            //apply the buff_scaleScript management details
+        {        
+            Transform playerTransform = col.GetComponent<Transform>();
+            if (playerTransform != null)
+            {
+                playerTransform.localScale = new Vector3(powerValue, powerValue, powerValue);
+            }
             Debug.Log("Scale");
-            //Destroy(this.gameObject);
+            if (buff_scaleScript != null)
+            {
+                buff_scaleScript.maxTime = maxTime + Time.time;
+                buff_scaleScript.isActive = true;
+            }
+            Destroy(this.gameObject);
             break;
         }
         default:
