@@ -24,6 +24,12 @@ When to use:
 - You need data to persist across method calls (e.g., health, score, speed).
 - You want to expose tunable values in the Inspector (use `public` or `[SerializeField] private`).
 
+When NOT to use (use instead):
+
+- Temporary calculations or one-off helpers → use local variables.
+- Values that depend on other fields every frame → compute locally on demand (don’t store as a field) unless profiling says otherwise.
+- Shared cross-scene global state → prefer a dedicated GameManager/service (and be cautious with singletons/static).
+
 ## Local variables
 
 - Declared inside a method or a block `{ }`.
@@ -42,6 +48,11 @@ When to use:
 
 - Temporary values used to compute something within a single method.
 - Avoids polluting the object’s long-term state.
+
+When NOT to use (use instead):
+
+- Data that represents the object’s ongoing state (health, speed) → use fields (possibly `[SerializeField]`).
+- Values needed by multiple methods across frames → use fields.
 
 ## Choosing between a field and a local variable
 
