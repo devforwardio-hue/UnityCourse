@@ -5,12 +5,14 @@ public class JumpingOld : MonoBehaviour
 
   public Rigidbody rb;
   public float jumpForce = 10f;
+  public float defaultForce = 10f;
   public bool isGrounded = false;
 
     
    
     void Start()
     {
+    jumpForce = defaultForce;
       rb = GetComponent<Rigidbody>();
     }
 
