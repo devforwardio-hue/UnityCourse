@@ -87,22 +87,64 @@ public class LivePowerup : MonoBehaviour
         }
 
         case PowerupType.Scale:
-        {
-            //in crease the players scale on x, y, and z, to the powerup value.
-            //apply the buff_scaleScript management details
-            Debug.Log("Scale");
-            //Destroy(this.gameObject);
-            break;
-        }
-        default:
-        {
-            Debug.Log("You forgot to set the powerup type");
-          break;
-        }
-      }
+                    {
+                        //in crease the players scale on x, y, and z, to t
+                        //he powerup value.
+                        //apply the buff_scaleScript management details
+public class Buff_Scale : MonoBehaviour
+    {
+        public float currentTime = 0;// where to put?
+        public float maxTime = 0;
+        public float defaultscale = 1; // no longer need, but future ?
+        public bool isActive = false;
+        public Transform playerTransform;
 
-      
+
+        private void Awake()
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+        void Start()
+        {
+            if (playerTransform != null)
+            {
+                Debug.Log("Player Found");
+            }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            StartTimer();
+
+        }
+
+        public void StartTimer()
+        {
+            if (isActive)
+            {
+                Debug.Log("Scale Timer start");
+                currentTime = Time.time;
+
+                if (currentTime > maxTime)
+                {
+                    playerTransform.localScale = new Vector3(defaultscale, defaultscale, defaultscale);
+                    isActive = false;
+                    Debug.Log("Scale Time is out");
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+
     }
+
+
+
+}
   }
 
 
