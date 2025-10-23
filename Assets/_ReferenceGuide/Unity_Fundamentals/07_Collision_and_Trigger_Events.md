@@ -31,6 +31,11 @@ Use cases:
 
 - Start damage on impact, apply friction while in contact, stop effects on exit.
 
+When NOT to use (use instead):
+
+- You only need detection without physics response → use Triggers (`OnTrigger*`).
+- 2D physics → use the `OnCollisionEnter2D/Stay2D/Exit2D` equivalents.
+
 ## Trigger callbacks (Is Trigger checked)
 
 ```csharp
@@ -53,6 +58,11 @@ void OnTriggerExit(Collider other)
 Use cases:
 
 - Pickups, area-of-effect zones, detection volumes, doors.
+
+When NOT to use (use instead):
+
+- You need solid physical response (bounce, block, friction) → use Collisions (non-trigger) with rigidbodies/colliders.
+- 2D physics → use the `OnTriggerEnter2D/Stay2D/Exit2D` equivalents.
 
 ## Common patterns
 
