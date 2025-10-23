@@ -13,3 +13,7 @@ public class LookingCamera : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, rotationY, 0);
     }
 }
+
+
+
+//looking right changes the forward motion

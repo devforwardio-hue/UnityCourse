@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 295221540}
   - component: {fileID: 295221539}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Lava Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Powerup
   type: 1
   multiply: 0
-  value: -4
+  value: -2
   destroyOnPickup: 1
 --- !u!114 &341520573
 MonoBehaviour:
@@ -5233,6 +5233,8 @@ GameObject:
   - component: {fileID: 1000706842}
   - component: {fileID: 1000706848}
   - component: {fileID: 1000706847}
+  - component: {fileID: 1000706849}
+  - component: {fileID: 1000706850}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5376,6 +5378,32 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1000706849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000706841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6722950c561ba4f9f8a4295504240f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookingCamera
+  sensitivty: 15
+--- !u!114 &1000706850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000706841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45cced1d1a5ed454d8a8b71bb69ad3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  Health: 100
 --- !u!1 &1024377280
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,7 +6212,7 @@ GameObject:
   - component: {fileID: 1184524292}
   - component: {fileID: 1184524291}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Lava Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6910,7 +6938,6 @@ GameObject:
   - component: {fileID: 1296931095}
   - component: {fileID: 1296931098}
   - component: {fileID: 1296931097}
-  - component: {fileID: 1296931096}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -6933,19 +6960,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1000706845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1296931096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296931094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6722950c561ba4f9f8a4295504240f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LookingCamera
-  sensitivty: 15
 --- !u!81 &1296931097
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10571,7 +10585,7 @@ Transform:
   m_GameObject: {fileID: 2026680909}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 17.1348, z: -0.05507}
+  m_LocalPosition: {x: -0.5, y: 16.88481, z: -0.05507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
