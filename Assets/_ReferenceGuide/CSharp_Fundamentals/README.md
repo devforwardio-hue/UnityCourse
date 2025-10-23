@@ -7,5 +7,6 @@
 - 🔵 Functions (Methods) — see [03_Functions_Methods.md](03_Functions_Methods.md)
 - 🧮 Variables and Scope — see [05_Variables_and_Scope.md](05_Variables_and_Scope.md)
 - 🧱 Classes, Instances, Namespaces — see [06_Classes_Objects_and_Namespaces.md](06_Classes_Objects_and_Namespaces.md)
+- 🧭 Enums and Switch Statements — see [04_Enums_and_Switch.md](04_Enums_and_Switch.md)
 
 Quick Ref for C#: see ../../\_ReferenceGuide/Quick_Ref.md
