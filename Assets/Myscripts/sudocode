@@ -1,0 +1,30 @@
+This is sudo code
+
+
+goal is to create a obstacle which is a cube
+
+should be able to do the following
+
+1. move left and right
+2. move up and down
+3. rotate
+
+
+layer 1: is plain english
+
+layer 2: research if layer 1 is possible
+
+layer 3: 
+
+
+layer 1 - Obstacle 
+
+// on start, The obstacle needs to move from one location to the other (left to right ) Within a max and minimum distance, from its current spot.
+
+
+first create a function that will run in the Void update function. name the 
+
+
+to move left and right well need access to the transform
+
+then well need access to 
