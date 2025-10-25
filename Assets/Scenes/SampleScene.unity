@@ -710,12 +710,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 412670877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce7b9679f964524aa4e6be8a82f23eb, type: 3}
+  m_Script: {fileID: 11500000, guid: a61e9ef57fe6f414b910a27a635a3ec9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiveSimpleObstacle
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
   minDistance: 1
-  maxDistance: 10
-  moveSpeed: 3
+  maxDistance: 5
+  moveSpeed: 1
   obstacleTransform: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &600679167
@@ -1005,6 +1005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7af18abde07648428fac686cf2e6999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buff_Scale
+  currentTime: 0
+  maxTime: 0
+  powerValue: 0
+  isActive: 0
+  scaleOld: {fileID: 0}
 --- !u!114 &1682800964
 MonoBehaviour:
   m_ObjectHideFlags: 0

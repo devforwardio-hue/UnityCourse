@@ -2,34 +2,47 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public float minDistance = 1f;
-    public float maxDistance = 5f;
-    public Transform obstacleTransform;
+  public float minDistance = 1f;//? to tell it to go back
+  public float maxDistance = 5f;
+  public float moveSpeed = 1f;
+  public Transform obstacleTransform;
+  public Vector3 startPosition;
+  private int direction = 1; // 1 = right, -1 = left
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-      
-    public void ObstacleMovement()
-    {
-        //I need to access the transform of the obstacle to move along the x axis
     
-
-        //we need to set a obstacleSpeed
-
-        //so when the transform reaches the maximum distance, return the other way to the minimum, and repeat this.
-
-        //Figuring out where to start the obstacle at
-
+    void Awake()
+    {
+      obstacleTransform = GetComponent<Transform>();
+      startPosition = obstacleTransform.position;
     }
 
+  // Update is called once per frame
+  void Update()
+    {
+      ObstacleMovement();
+    }
+
+  public void ObstacleMovement()
+  {
+    //CHALLENGE:
+    //RESEARCH: Vector3.Distance
+    //RESEARCH: Vector3.Normalize
+    //RESEARCH: Making an object, move left to right.
+
+    //FIX THE CODE TO COMPLETE THE LEFT RIGHT FUNCTIONALITY
+    //DONT ADD OTHER SHIT. 
+
+    obstacleTransform.position += new Vector3(direction, 0, 0) * moveSpeed * Time.deltaTime;
+
+    if (obstacleTransform.position.x >= startPosition.x + maxDistance)
+    {      
+      direction = -1;
+    }
+    else if (obstacleTransform.position.x <= startPosition.x - maxDistance)
+    {
+      direction = 1;
+    }
+  }
 
 }
