@@ -25,13 +25,9 @@ public class Obstacle : MonoBehaviour
 
   public void ObstacleMovement()
   {
-    //CHALLENGE:
-    //RESEARCH: Vector3.Distance
-    //RESEARCH: Vector3.Normalize
-    //RESEARCH: Making an object, move left to right.
-
-    //FIX THE CODE TO COMPLETE THE LEFT RIGHT FUNCTIONALITY
-    //DONT ADD OTHER SHIT. 
+    //great work. 
+    //This is basically how the shorthand version works as well functionality wise.
+    //You figured out exactly what I was trying to do during the class. great job.
 
     obstacleTransform.position += new Vector3(direction, 0, 0) * moveSpeed * Time.deltaTime;
 
