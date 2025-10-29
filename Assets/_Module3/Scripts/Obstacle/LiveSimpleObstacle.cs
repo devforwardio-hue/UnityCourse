@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LiveSimpleObstacle : MonoBehaviour
+/*public class LiveSimpleObstacle : MonoBehaviour
 {
   public float minDistance = 1f;//? to tell it to go back
   public float maxDistance = 5f;
@@ -50,3 +50,4 @@ public class LiveSimpleObstacle : MonoBehaviour
 
 
 }
+*/
