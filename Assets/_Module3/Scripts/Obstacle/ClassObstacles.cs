@@ -9,7 +9,8 @@ public class ClassObstacles : MonoBehaviour
         GScott,
         TMcGee,
         TChisam,
-        EWelch
+        EWelch,
+        KStidham
     }
 
     [Header("Student Selection")]
@@ -71,6 +72,9 @@ public class ClassObstacles : MonoBehaviour
                 break;
             case StudentName.EWelch:
                 EWelch_Movement();
+                break;
+            case StudentName.KStidham:
+                KStidham_Movement();
                 break;
         }
     }
@@ -189,6 +193,29 @@ public class ClassObstacles : MonoBehaviour
             obstacleDirection = -1;
         }
         else if (obstacleTransform.position.x <= startPosition.x - maxDistance)
+        {
+            obstacleDirection = 1;
+        }
+    }
+    #endregion
+
+    #region KStidham Movement
+    /*
+     * Vector3.Distance Calculation - Uses Unity's distance function to measure from origin.
+     * Movement uses distance measurement rather than position comparison for boundaries.
+     * Physics: Constant velocity with instant direction reversal based on calculated distance.
+     * Unique approach - distance is magnitude-based (always positive), checks actual travel distance.
+     */
+    private void KStidham_Movement()
+    {
+        float distanceFromStart = Vector3.Distance(obstacleTransform.position, startPosition);
+        obstacleTransform.position += Vector3.right * obstacleDirection * moveSpeed * Time.deltaTime;
+
+        if (distanceFromStart >= maxDistance)
+        {
+            obstacleDirection = -1;
+        }
+        else if (distanceFromStart <= minDistance)
         {
             obstacleDirection = 1;
         }
