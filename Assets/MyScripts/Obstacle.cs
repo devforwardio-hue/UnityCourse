@@ -1,8 +1,10 @@
+using System.Collections;
+using Unity.Hierarchy;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public float minDistance = 1.0f;
+    public float minDistance = -5.0f;
     public float maxDistance = 5.0f;
     public float moveSpeed = 1.0f;
     public Transform obstacleTransform;
@@ -11,19 +13,57 @@ public class Obstacle : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        obstacleTransform = GetComponent<Transform>();  
+        obstacleTransform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ObstacleMovement();
-
+        IEnumerable ObstacleMovement;
+        {
+            obstacleTransform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+            yield return new WaitForSeconds(10.0f);
+            obstacleTransform.position -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        }
     }
     public void ObstacleMovement()
-        {
+    {
 
-        obstacleTransform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        if (obstacleTransform.position.x < maxDistance && obstacleTransform.position.x >= minDistance)
+        {
+            obstacleTransform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        }
+        else
+        {
+            if (obstacleTransform.position.x >= maxDistance)
+            {
+                while (obstacleTransform.position.x >= minDistance)
+                {
+                    obstacleTransform.position += new Vector3(-moveSpeed * Time.deltaTime, 0, 0);
+                }
+            }
+            else if (obstacleTransform.position.x <= minDistance)
+            {
+                while (obstacleTransform.position.x <= maxDistance)
+                {
+                    obstacleTransform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+                }
+
+                //obstacleTransform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+
+                //  int result = obstacleTransform.position.x == maxDistance);
+                
+                {
+                    
+                }
+            }
+
+            //obstacleTransform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+
+        }
+    }
+}
+        
         //move along the x axis
 
         //we need to set a obstacleSpeed
@@ -31,8 +71,3 @@ public class Obstacle : MonoBehaviour
         //so when the transform reaches the maximum distance, return the other way to the minimum, and repeat this.
 
         //Figuring out where to start the obstacle at
-    }
-
-
-
-}
