@@ -10,7 +10,8 @@ public class ClassObstacles : MonoBehaviour
         TMcGee,
         TChisam,
         EWelch,
-        KStidham
+        KStidham,
+        SStidham
     }
 
     [Header("Student Selection")]
@@ -75,6 +76,9 @@ public class ClassObstacles : MonoBehaviour
                 break;
             case StudentName.KStidham:
                 KStidham_Movement();
+                break;
+            case StudentName.SStidham:
+                SStidham_Movement();
                 break;
         }
     }
@@ -221,4 +225,27 @@ public class ClassObstacles : MonoBehaviour
         }
     }
     #endregion
+
+    #region SStidham Movement
+    /*
+     * Advanced PingPong with Range Calculation - Refines GScott's approach with proper min/max handling.
+     * Validates range before execution, uses offset math to map PingPong output to custom range.
+     * Physics: Non-linear velocity (same as GScott), but oscillates between minDistance and maxDistance.
+     * Key improvement: PingPong range is calculated (max - min), then min is added as offset.
+     * Most mathematically correct PingPong implementation - handles arbitrary min/max values properly.
+     */
+    private void SStidham_Movement()
+    {
+        float range = maxDistance - minDistance;
+        if (range <= 0f)
+            return;
+
+        //My understanding is that we will move from one position to the otheer, based on blay blah blah transform.positon blah blah blah
+        float offset = Mathf.PingPong(Time.time * moveSpeed, range) + minDistance;
+        Vector3 pos = startPosition;
+        pos.x = startPosition.x + offset;
+        obstacleTransform.position = pos;
+        //comment your full undestanding of how this works, in as much long form as possible.
+  }
+  #endregion
 }
