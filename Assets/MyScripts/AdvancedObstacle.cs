@@ -1,15 +1,16 @@
 using UnityEngine;
 
 
-public class Obstacle : MonoBehaviour
+public class AdvancedObstacle : MonoBehaviour
 {
     public enum ObstacleType
     {
         X, Y, Z
     }
     public ObstacleType type;
-    public float moveDistance = 1f;
+    public float moveDistance = 5f;
     public float moveSpeed = 1f;
+    public float rotationSpeed = 200f;
     public Transform obstacleTransform;
     public Vector3 startPosition;
     private int obstacleDirection = 1;
@@ -29,6 +30,8 @@ public class Obstacle : MonoBehaviour
     void Update()
     {
         ObstacleMovement();
+
+        ObstacleRotation();
     }
 
     public void ObstacleMovement()
@@ -73,6 +76,25 @@ public class Obstacle : MonoBehaviour
         else if (offsetFromStart <= -moveDistance)
         {
             obstacleDirection = 1;
+        }
+    }
+
+    public void ObstacleRotation()
+    {
+        switch (type)
+        {
+            case ObstacleType.X:
+                obstacleTransform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+                break;
+            case ObstacleType.Y:
+                obstacleTransform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+                break;
+            case ObstacleType.Z:
+                obstacleTransform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+                break;
+            default:
+                obstacleTransform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+                break;
         }
     }
 }

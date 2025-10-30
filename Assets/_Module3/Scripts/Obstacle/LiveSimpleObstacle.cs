@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public enum ObstacleType
-{
-  X, Y, Z
-}
+
 public class LiveSimpleObstacle : MonoBehaviour
 {
+
+  public enum ObstacleType
+    {
+        X, Y, Z
+    }
   public ObstacleType type;
   public float moveDistance = 5f;
   public float moveSpeed = 1f;
   public Transform obstacleTransform;
   public Vector3 startPosition;
   private int obstacleDirection = 1;
+
 
   void Awake()
     {
