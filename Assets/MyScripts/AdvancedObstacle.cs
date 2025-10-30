@@ -7,13 +7,13 @@ public class AdvancedObstacle : MonoBehaviour
     {
         X, Y, Z
     }
-    public enum RotationAxis
+    public enum AxisRotation
     {
         X, Y, Z
     }
 
-    public AxisMovement type;
-    public RotationAxis axis;
+    public AxisMovement AxisMove;
+    public AxisRotation AxisRotate;
     public float moveDistance = 5f;
     public float moveSpeed = 1f;
     public float rotationSpeed = 200f;
@@ -50,7 +50,7 @@ public class AdvancedObstacle : MonoBehaviour
         float zpos = 0f;
         Debug.Log(currentAxisPosition);
         // Set movement along one axis explicitly
-        switch (type)
+        switch (AxisMove)
         {
             case AxisMovement.X:
                 xpos = posMoving;
@@ -87,15 +87,15 @@ public class AdvancedObstacle : MonoBehaviour
 
     public void ObstacleRotation()
     {
-        switch (axis)
+        switch (AxisRotate)
         {
-            case RotationAxis.X:
+            case AxisRotation.X:
                 obstacleTransform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
                 break;
-            case RotationAxis.Y:
+            case AxisRotation.Y:
                 obstacleTransform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
                 break;
-            case RotationAxis.Z:
+            case AxisRotation.Z:
                 obstacleTransform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
                 break;
             default:
