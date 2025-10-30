@@ -1,53 +1,77 @@
 using UnityEngine;
 
-/*public class LiveSimpleObstacle : MonoBehaviour
+public enum ObstacleType
 {
-  public float minDistance = 1f;//? to tell it to go back
-  public float maxDistance = 5f;
+  X, Y, Z
+}
+public class LiveSimpleObstacle : MonoBehaviour
+{
+  public ObstacleType type;
+  public float moveDistance = 5f;
   public float moveSpeed = 1f;
   public Transform obstacleTransform;
   public Vector3 startPosition;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-    void Awake()
+  private int obstacleDirection = 1;
+
+  void Awake()
     {
       obstacleTransform = GetComponent<Transform>();
     }
 
     void Start()
     {
-      
+      // Record the initial position so we can compare movement along the selected axis
+      startPosition = obstacleTransform.position;
     }
 
   // Update is called once per frame
   void Update()
     {
       ObstacleMovement();
-    }
+     }
 
-    public void ObstacleMovement()
+  public void ObstacleMovement()
+  {
+    float posMoving = moveSpeed * obstacleDirection * Time.deltaTime;
+    float currentAxisPosition = 0f;
+    float offsetFromStart = 0f;
+    float xpos = 0f;
+    float ypos = 0f;
+    float zpos = 0f;
+    Debug.Log(currentAxisPosition);
+    // Set movement along one axis explicitly
+    switch (type)
     {
-    //CHALLENGE:
-    //RESEARCH: Vector3.Distance
-    //RESEARCH: Vector3.Normalize
-    //RESEARCH: Making an object, move left to right.
+      case ObstacleType.X:
+        xpos = posMoving;
+        currentAxisPosition = obstacleTransform.position.x;
+        offsetFromStart = obstacleTransform.position.x - startPosition.x;
+        Debug.Log(offsetFromStart);
+        break;
+      case ObstacleType.Y:
+        ypos = posMoving;
+        currentAxisPosition = obstacleTransform.position.y;
+        offsetFromStart = obstacleTransform.position.y - startPosition.y;
+        break;
+      case ObstacleType.Z:
+        zpos = posMoving;
+        currentAxisPosition = obstacleTransform.position.z;
+        offsetFromStart = obstacleTransform.position.z - startPosition.z;
+        break;
+      default:
+        xpos = posMoving;
+        break;
+    }
 
-    //FIX THE CODE TO COMPLETE THE LEFT RIGHT FUNCTIONALITY
-    //DONT ADD OTHER SHIT. 
 
-    
-    if (startPosition.x + transform.position.x <= maxDistance ) 
+    obstacleTransform.position += new Vector3(xpos, ypos, zpos);
+    if (offsetFromStart >= moveDistance)
     {
-      obstacleTransform.position += new Vector3(1, 0, 0) * moveSpeed * Time.deltaTime;
+      obstacleDirection = -1;
     }
-
+    else if (offsetFromStart <= -moveDistance)
+    {
+      obstacleDirection = 1;
     }
-
-
-
-
-
-
-
-}
-*/
+  }
+ }
