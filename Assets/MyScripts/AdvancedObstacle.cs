@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AdvancedObstacle : MonoBehaviour
 {
-    public enum ObstacleType
+    public enum AxisMovement
     {
         X, Y, Z
     }
@@ -12,7 +12,7 @@ public class AdvancedObstacle : MonoBehaviour
         X, Y, Z
     }
 
-    public ObstacleType type;
+    public AxisMovement type;
     public RotationAxis axis;
     public float moveDistance = 5f;
     public float moveSpeed = 1f;
@@ -52,18 +52,18 @@ public class AdvancedObstacle : MonoBehaviour
         // Set movement along one axis explicitly
         switch (type)
         {
-            case ObstacleType.X:
+            case AxisMovement.X:
                 xpos = posMoving;
                 currentAxisPosition = obstacleTransform.position.x;
                 offsetFromStart = obstacleTransform.position.x - startPosition.x;
                 Debug.Log(offsetFromStart);
                 break;
-            case ObstacleType.Y:
+            case AxisMovement.Y:
                 ypos = posMoving;
                 currentAxisPosition = obstacleTransform.position.y;
                 offsetFromStart = obstacleTransform.position.y - startPosition.y;
                 break;
-            case ObstacleType.Z:
+            case AxisMovement.Z:
                 zpos = posMoving;
                 currentAxisPosition = obstacleTransform.position.z;
                 offsetFromStart = obstacleTransform.position.z - startPosition.z;
