@@ -7,7 +7,13 @@ public class AdvancedObstacle : MonoBehaviour
     {
         X, Y, Z
     }
+    public enum RotationAxis
+    {
+        X, Y, Z
+    }
+
     public ObstacleType type;
+    public RotationAxis axis;
     public float moveDistance = 5f;
     public float moveSpeed = 1f;
     public float rotationSpeed = 200f;
@@ -78,25 +84,18 @@ public class AdvancedObstacle : MonoBehaviour
             obstacleDirection = 1;
         }
     }
-    //good job slut. One more request.
-    //currently everything checks the obstacle type, and rotates on that type. but what if i want to
-    //move on the x and rotate on the z?
-    //seperate the enum type by creating a second one. So have instead of ObstacleType, have MovementAxis
-    //then RotationAxis. Both with options to xyz, then adjust the switch statements to use movement axis control for 
-    //movement, then the rotation switch to access the RotationAxis. This way each obstacle can choosee different movmenet and rotation directions.
-
 
     public void ObstacleRotation()
     {
-        switch (type)
+        switch (axis)
         {
-            case ObstacleType.X:
+            case RotationAxis.X:
                 obstacleTransform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
                 break;
-            case ObstacleType.Y:
+            case RotationAxis.Y:
                 obstacleTransform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
                 break;
-            case ObstacleType.Z:
+            case RotationAxis.Z:
                 obstacleTransform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
                 break;
             default:
