@@ -26,9 +26,9 @@ public class LiveSimpleObstacle : MonoBehaviour
 
   // Update is called once per frame
   void Update()
-    {
-      ObstacleMovement();
-     }
+  {
+    ObstacleMovement();
+  }
 
   public void ObstacleMovement()
   {
@@ -73,5 +73,7 @@ public class LiveSimpleObstacle : MonoBehaviour
     {
       obstacleDirection = 1;
     }
+
+
   }
  }
