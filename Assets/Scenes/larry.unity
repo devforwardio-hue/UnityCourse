@@ -836,6 +836,7 @@ GameObject:
   - component: {fileID: 704521123}
   - component: {fileID: 704521122}
   - component: {fileID: 704521126}
+  - component: {fileID: 704521127}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -947,12 +948,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363160bcf14d42c4aa1d2ded3826a24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  step: 1
-  maxMovementNeg: -5
-  maxMovement: 5
-  movespeed: 1
+  type: 0
+  moveDistance: 5
+  moveSpeed: 1
   obstacleTransform: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &704521127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704521121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a188094cd2ab21a4b8d94cbc8a9f94c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdvanceObstacle
+  type: 0
+  moveDistance: 5
+  moveSpeed: 1
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  xrotate: 0
+  yrotate: 0
+  zrotate: 0
 --- !u!1 &897935308
 GameObject:
   m_ObjectHideFlags: 0
