@@ -40,7 +40,7 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        ObstacleMovement();
     }
 
     public void ObstacleMovement()
@@ -60,8 +60,13 @@ public class Obstacle : MonoBehaviour
             {
                 obstacleTransform.position += new Vector3(step, 0, 0) * movespeed * Time.deltaTime;
             }
-           
-        
+
+        if (startPosition.x + transform.position.x >= maxMovementNeg)
+        {
+            obstacleTransform.position += new Vector3(step, 0, 0) * movespeed * Time.deltaTime;
+        }
+
+
         if (startPosition.x + transform.position.x >= maxMovement)
             {
             step = -step;
