@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7007261318639584469}
   - component: {fileID: 3326616898497241100}
   - component: {fileID: 6698941146535242794}
+  - component: {fileID: 9196039249279217337}
   m_Layer: 0
   m_Name: Mike
   m_TagString: Player
@@ -115,6 +116,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementOld
   moveSpeed: 5
   defaultSpeed: 5
+--- !u!114 &9196039249279217337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351794994802426299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96e401eaf18973409f2e338b73af9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buff_Movement
+  currentTime: 5
+  maxTime: 10
+  powerValue: 1
+  isActive: 0
+  playerMovementOld: {fileID: 0}
 --- !u!1 &614801926587190021
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,13 +159,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614801926587190021}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15768796, y: -0, z: -0, w: 0.98748904}
-  m_LocalPosition: {x: 1.34, y: 3.13, z: -4.58}
+  m_LocalRotation: {x: 0.5082407, y: -0, z: -0, w: 0.86121505}
+  m_LocalPosition: {x: -0.15, y: 8.45, z: -4.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6609804667317078735}
-  m_LocalEulerAnglesHint: {x: 18.145, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 61.093, y: 0, z: 0}
 --- !u!20 &5545955572537800461
 Camera:
   m_ObjectHideFlags: 0
