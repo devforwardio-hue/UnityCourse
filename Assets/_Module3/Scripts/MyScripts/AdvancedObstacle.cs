@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-public class LiveSimpleObstacle : MonoBehaviour
+public class AdvancedObstacle : MonoBehaviour
 {
   public enum ObstacleType
   {
