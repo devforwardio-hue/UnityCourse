@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 319352476}
   - component: {fileID: 319352475}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Simple Scrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -891,7 +891,7 @@ Transform:
   m_GameObject: {fileID: 319352474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.69, y: 0, z: 0.44909}
+  m_LocalPosition: {x: 4, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 772528614}
   - component: {fileID: 772528613}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Old Obstacle Scrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1843,7 +1843,7 @@ Transform:
   m_GameObject: {fileID: 772528612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.16, y: 0, z: -2.98}
+  m_LocalPosition: {x: -4, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2264,8 +2264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abacc9436bc76da42bbd2f0b9c98a139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdvancedObstacle
-  type: 0
-  moveDistance: 5
+  AxisMove: 0
+  AxisRotate: 0
+  moveDistance: 1
   moveSpeed: 1
   rotationSpeed: 200
   obstacleTransform: {fileID: 0}
@@ -2376,7 +2377,7 @@ Transform:
   m_GameObject: {fileID: 1236858875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2394,8 +2395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abacc9436bc76da42bbd2f0b9c98a139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdvancedObstacle
-  type: 1
-  moveDistance: 5
+  AxisMove: 0
+  AxisRotate: 0
+  moveDistance: 1
   moveSpeed: 1
   rotationSpeed: 200
   obstacleTransform: {fileID: 0}
@@ -4121,8 +4123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abacc9436bc76da42bbd2f0b9c98a139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdvancedObstacle
-  type: 2
-  moveDistance: 5
+  AxisMove: 0
+  AxisRotate: 0
+  moveDistance: 1
   moveSpeed: 1
   rotationSpeed: 200
   obstacleTransform: {fileID: 0}

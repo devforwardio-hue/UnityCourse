@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - RedDoor
+  - GreenDoor
+  - BlueDoor
   layers:
   - Default
   - TransparentFX
