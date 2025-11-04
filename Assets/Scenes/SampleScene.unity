@@ -1108,10 +1108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7642e3adeeb62be469802b9fbc002444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleObstacle
-  direction: {x: 1, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 1}
   rotationDirection: {x: 0, y: 1, z: 0}
-  speed: 3
-  rotationSpeed: 0
+  speed: 1
+  rotationSpeed: 1
   maxMoveDistance: 5
 --- !u!1 &547985121
 GameObject:
@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 1106111361}
   - component: {fileID: 1106111360}
   - component: {fileID: 1106111359}
-  - component: {fileID: 1106111358}
+  - component: {fileID: 1106111363}
   m_Layer: 0
   m_Name: XObst
   m_TagString: Untagged
@@ -1902,23 +1902,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1106111358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106111357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce7b9679f964524aa4e6be8a82f23eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiveSimpleObstacle
-  type: 0
-  moveDistance: 2
-  moveSpeed: 4
-  obstacleTransform: {fileID: 0}
-  startPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1106111359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2005,12 +1988,31 @@ Transform:
   m_GameObject: {fileID: 1106111357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.86851, y: 0, z: 2.01}
+  m_LocalPosition: {x: -4.25, y: 0.5, z: 2.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106111363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106111357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4b95c6851f94a44b2ea4c732e75dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingRotatingObstacle
+  moveAxis: 0
+  moveDistance: 5
+  moveSpeed: 5
+  rotationSpeed: 90
+  enableMovement: 1
+  enableRotation: 1
+  rotationAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &1236858875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1236858876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2134,7 +2136,7 @@ Transform:
   m_GameObject: {fileID: 1236858875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.86851, y: 0, z: -0.48988}
+  m_LocalPosition: {x: -0.19, y: 0, z: -0.48988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3752,7 +3754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2021475598
 MonoBehaviour:
   m_ObjectHideFlags: 0

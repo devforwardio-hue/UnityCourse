@@ -37,4 +37,4 @@ public class StrafingObstacle : MonoBehaviour
             direction = 1;
         }
     }
-}//
+}
