@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 177583363}
   - component: {fileID: 177583362}
   - component: {fileID: 177583361}
+  - component: {fileID: 177583366}
   m_Layer: 0
   m_Name: Moving Cube
   m_TagString: Untagged
@@ -375,9 +376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce7b9679f964524aa4e6be8a82f23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiveSimpleObstacle
-  speed: 4
-  distance: 3
-  rotationSpeed: 90
+  type: 0
+  moveDistance: 5
+  moveSpeed: 1
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &177583362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -470,6 +473,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177583366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177583360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035944fbf943f9e4482c9c4f78dfba2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdvancedObstacle
+  type: 0
+  moveDistance: 5
+  moveSpeed: 1
+  rotationMultiplier: 90
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &188918059
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,9 +732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce7b9679f964524aa4e6be8a82f23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiveSimpleObstacle
-  speed: 4
-  distance: 3
-  rotationSpeed: 90
+  type: 0
+  moveDistance: 5
+  moveSpeed: 1
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &572424345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -931,6 +954,7 @@ GameObject:
   - component: {fileID: 867779522}
   - component: {fileID: 867779521}
   - component: {fileID: 867779520}
+  - component: {fileID: 867779525}
   m_Layer: 0
   m_Name: Moving Cube (2)
   m_TagString: Untagged
@@ -950,9 +974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce7b9679f964524aa4e6be8a82f23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiveSimpleObstacle
-  speed: 4
-  distance: 3
-  rotationSpeed: 90
+  type: 2
+  moveDistance: 5
+  moveSpeed: 1
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &867779521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1045,6 +1071,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867779525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867779519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035944fbf943f9e4482c9c4f78dfba2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdvancedObstacle
+  type: 2
+  moveDistance: 4
+  moveSpeed: 4
+  rotationMultiplier: 360
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &897935308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1214,7 @@ GameObject:
   - component: {fileID: 1620351163}
   - component: {fileID: 1620351162}
   - component: {fileID: 1620351161}
+  - component: {fileID: 1620351166}
   m_Layer: 0
   m_Name: Moving Cube (1)
   m_TagString: Untagged
@@ -1189,9 +1234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce7b9679f964524aa4e6be8a82f23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiveSimpleObstacle
-  speed: 4
-  distance: 3
-  rotationSpeed: 90
+  type: 1
+  moveDistance: 5
+  moveSpeed: 1
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1620351162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1284,6 +1331,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620351166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620351160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035944fbf943f9e4482c9c4f78dfba2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdvancedObstacle
+  type: 1
+  moveDistance: 5
+  moveSpeed: 1
+  rotationMultiplier: 30
+  obstacleTransform: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1682800959
 GameObject:
   m_ObjectHideFlags: 0
