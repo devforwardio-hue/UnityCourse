@@ -1,9 +1,6 @@
 using UnityEngine;
 
-public enum ObstacleType
-{
-  X, Y, Z
-}
+
 public class LiveSimpleObstacle : MonoBehaviour
 {
   public ObstacleType type;
@@ -12,8 +9,12 @@ public class LiveSimpleObstacle : MonoBehaviour
   public Transform obstacleTransform;
   public Vector3 startPosition;
   private int obstacleDirection = 1;
+  public enum ObstacleType
+    {
+        X, Y, Z
+    }
 
-  void Awake()
+    void Awake()
     {
       obstacleTransform = GetComponent<Transform>();
     }
