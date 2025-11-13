@@ -5,17 +5,19 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float gravity = 9.81f;
-    public float jumpForce = 10f; 
+    public float jumpForce = 10f;
+    public float defaultSpeed = 10f;
 
-    private CharacterController controller;
-    private Vector3 velocity; 
+  private CharacterController controller;
+    private Vector3 jumpVelocity; 
 
     private Vector2 input;
     private bool jumpRequested;
 
     void Awake()
     {
-        controller = GetComponent<CharacterController>();
+      moveSpeed = defaultSpeed;
+      controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -43,21 +45,20 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        float dt = Time.fixedDeltaTime;
-        Vector3 horizontal = new Vector3(input.x, 0f, input.y) * moveSpeed;
+        Vector3 movementData = new Vector3(input.x, 0f, input.y) * moveSpeed;
 
         if (controller.isGrounded)
         {
-            if (velocity.y < 0f) velocity.y = -2f; // keep grounded
+            if (jumpVelocity.y < 0f) jumpVelocity.y = -2f; // keep grounded ?? 
             if (jumpRequested)
             {
-                velocity.y = jumpForce;
+                jumpVelocity.y = jumpForce;
             }
         }
 
         jumpRequested = false;
-        velocity.y += -gravity * dt;
-        Vector3 motion = new Vector3(horizontal.x, velocity.y, horizontal.z) * dt;
+        jumpVelocity.y += -gravity * Time.fixedDeltaTime;
+        Vector3 motion = new Vector3(movementData.x, jumpVelocity.y, movementData.z) * Time.fixedDeltaTime;
         controller.Move(motion);
     }
 }
