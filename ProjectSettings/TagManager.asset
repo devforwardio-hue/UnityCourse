@@ -8,6 +8,7 @@ TagManager:
   - RedDoor
   - GreenDoor
   - BlueDoor
+  - Floor1
   layers:
   - Default
   - TransparentFX
