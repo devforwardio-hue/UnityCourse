@@ -1,14 +1,21 @@
 using UnityEngine;
 
-public enum ObstacleType
+public class LiveSimpleObstacle : MonoBehaviour
+{
+public enum MovementAxis
 {
   X, Y, Z
 }
-public class LiveSimpleObstacle : MonoBehaviour
+
+public enum RotationAxis
 {
-  public ObstacleType type;
+  X, Y, Z
+}
+  public MovementAxis moveAxis;
+  public RotationAxis rotationAxis;
   public float moveDistance = 5f;
   public float moveSpeed = 1f;
+  public float rotationSpeed = 100f;
   public Transform obstacleTransform;
   public Vector3 startPosition;
   private int obstacleDirection = 1;
@@ -26,34 +33,35 @@ public class LiveSimpleObstacle : MonoBehaviour
 
   // Update is called once per frame
   void Update()
-  {
-    ObstacleMovement();
-  }
+    {
+      ObstacleMovement();
+      ObstacleRotation();
+     }
 
   public void ObstacleMovement()
   {
+    if (moveSpeed <= 0f) { return; }
     float posMoving = moveSpeed * obstacleDirection * Time.deltaTime;
     float currentAxisPosition = 0f;
     float offsetFromStart = 0f;
     float xpos = 0f;
     float ypos = 0f;
     float zpos = 0f;
-    Debug.Log(currentAxisPosition);
     // Set movement along one axis explicitly
-    switch (type)
+    switch (moveAxis)
     {
-      case ObstacleType.X:
+      case MovementAxis.X:
         xpos = posMoving;
         currentAxisPosition = obstacleTransform.position.x;
         offsetFromStart = obstacleTransform.position.x - startPosition.x;
         Debug.Log(offsetFromStart);
         break;
-      case ObstacleType.Y:
+      case MovementAxis.Y:
         ypos = posMoving;
         currentAxisPosition = obstacleTransform.position.y;
         offsetFromStart = obstacleTransform.position.y - startPosition.y;
         break;
-      case ObstacleType.Z:
+      case MovementAxis.Z:
         zpos = posMoving;
         currentAxisPosition = obstacleTransform.position.z;
         offsetFromStart = obstacleTransform.position.z - startPosition.z;
@@ -73,7 +81,34 @@ public class LiveSimpleObstacle : MonoBehaviour
     {
       obstacleDirection = 1;
     }
-
-
   }
- }
+  public void ObstacleRotation()
+  {
+    if (rotationSpeed <= 0f) { return; }//do nothing 
+    float posRotation = rotationSpeed * Time.deltaTime;
+    float xpos = 0f;
+    float ypos = 0f;
+    float zpos = 0f;
+
+    switch (rotationAxis)
+    {
+      case RotationAxis.X:
+        xpos = posRotation;
+        break;
+      case RotationAxis.Y:
+        ypos = posRotation;
+        break;
+      case RotationAxis.Z:
+        zpos = posRotation;
+        break;
+      default:
+        xpos = posRotation;
+        break;
+    }
+
+    Quaternion rotationValue = Quaternion.Euler(xpos, ypos, zpos);
+    obstacleTransform.rotation = obstacleTransform.rotation * rotationValue;
+
+  
+  }
+}
