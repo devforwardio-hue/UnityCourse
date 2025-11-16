@@ -9,6 +9,10 @@ TagManager:
   - GreenDoor
   - BlueDoor
   - Floor1
+  - Wall1 (N)
+  - Wall1 (E)
+  - Wall1 (S)
+  - Wall1 (W)
   layers:
   - Default
   - TransparentFX

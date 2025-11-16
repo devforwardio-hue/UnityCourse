@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class FloorSelection : MonoBehaviour
+public class RandomFlooring : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawnRandomFloorArray;
 
