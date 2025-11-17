@@ -1,17 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ThreeCrystalKeyPickup : MonoBehaviour
 {
-    public enum CrystalKeyType
+    enum CrystalKeyType
     {
         RedCrystal, BlueCrystal, GreenCrystal
     }
 
-    //public enum CrystalDoorType
-    //{
-    //    RedCrystalDoor, BlueCrystalDoor, GreenCrystalDoor, ColoredCrystalDoor
-    //}
-    public GameObject RedCrystalDoor, BlueCrystalDoor, GreenCrystalDoor, ColoredCrystalDoor;
+
+    public GameObject RedCrystalDoors, BlueCrystalDoors, GreenCrystalDoors, ColoredCrystalDoors;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,10 +25,10 @@ public class ThreeCrystalKeyPickup : MonoBehaviour
 
     private void Awake()
     {
-        RedCrystalDoor = GameObject.FindGameObjectWithTag("RedCrystalDoor");
-        BlueCrystalDoor = GameObject.FindGameObjectWithTag("BlueCrystalDoor");
-        GreenCrystalDoor = GameObject.FindGameObjectWithTag("GreenCrystalDoor");
-        ColoredCrystalDoor = GameObject.FindGameObjectWithTag("ColoredCrystalDoor");
+        RedCrystalDoors = GameObject.FindGameObjectWithTag("RedCrystalDoor");
+        BlueCrystalDoors = GameObject.FindGameObjectWithTag("BlueCrystalDoor");
+        GreenCrystalDoors = GameObject.FindGameObjectWithTag("GreenCrystalDoor");
+        ColoredCrystalDoors = GameObject.FindGameObjectWithTag("ColoredCrystalDoor");
     }
 
     private void OnTriggerEnter(Collider col)
@@ -41,16 +39,17 @@ public class ThreeCrystalKeyPickup : MonoBehaviour
             {
                 case "RedCrystalKey":
                     Destroy(this.gameObject);
-                    Destroy(RedCrystalDoor);
+                    Destroy(RedCrystalDoors);
+                    Debug.Log("No Touch.");
                     break;
                 case "GreenCrystalKey":
                     Destroy(this.gameObject);
-                    Destroy(GreenCrystalDoor);
-                    Destroy(ColoredCrystalDoor);
+                    Destroy(GreenCrystalDoors);
+                    Destroy(ColoredCrystalDoors);
                     break;
                 case "BlueCrystalKey":
                     Destroy(this.gameObject);
-                    Destroy(BlueCrystalDoor);
+                    Destroy(BlueCrystalDoors);
                     break;
             }
         }

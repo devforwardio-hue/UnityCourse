@@ -3316,6 +3316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colored Door Left
       objectReference: {fileID: 0}
+    - target: {fileID: 122140, guid: 83bca42b08f07db46a6e240380100f24, type: 3}
+      propertyPath: m_TagString
+      value: ColoredCrystalDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 452850, guid: 83bca42b08f07db46a6e240380100f24, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -7607,11 +7611,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199708, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_TagString
-      value: BlueDoor
+      value: BlueCrystalDoor
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.500011
+      value: -0.000011444092
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7619,7 +7623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.099981
+      value: 1.5999813
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7812,11 +7816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 125656, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_TagString
-      value: BlueDoor
+      value: BlueCrystalDoor
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.500011
+      value: -0.000011444092
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7824,7 +7828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.899981
+      value: -1.6000195
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17555,9 +17559,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 570991913}
+  - component: {fileID: 570991914}
   m_Layer: 0
-  m_Name: Blue Door Set
-  m_TagString: BlueCrystalDoor
+  m_Name: Blue Crystal Door Set
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17571,7 +17576,7 @@ Transform:
   m_GameObject: {fileID: 570991912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.5, y: 0, z: 17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17579,6 +17584,22 @@ Transform:
   - {fileID: 253191394}
   m_Father: {fileID: 126119303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &570991914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570991912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
 --- !u!1001 &571066118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18281,15 +18302,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 125656, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_Name
-      value: Blue Door Left
+      value: Green Door Left
       objectReference: {fileID: 0}
     - target: {fileID: 125656, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_TagString
-      value: GreenDoor
+      value: GreenCrystalDoor
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.50005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18297,7 +18318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 120.89998
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32192,6 +32213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colored Door Right
       objectReference: {fileID: 0}
+    - target: {fileID: 117088, guid: efde79f5067f01c4680cad7f529c82ab, type: 3}
+      propertyPath: m_TagString
+      value: ColoredCrystalDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 422952, guid: efde79f5067f01c4680cad7f529c82ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -32533,6 +32558,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7410836042853699859, guid: 4ebf2bdcb1a975344a6642cbcd65c1a6, type: 3}
   m_PrefabInstance: {fileID: 1002413222}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1003572100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 161392, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
+  m_PrefabInstance: {fileID: 2029293382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1003572103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003572100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 207.60014, y: 152.21489, z: 59.765953}
+  m_Center: {x: 0.0067977905, y: 102.69839, z: -5.1041813}
 --- !u!1 &1005321569 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3786873135405515593, guid: 4ebf2bdcb1a975344a6642cbcd65c1a6, type: 3}
@@ -37231,11 +37282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 125656, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: RedCrystalDoor
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37243,7 +37294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.1
+      value: -1.6000004
       objectReference: {fileID: 0}
     - target: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37503,9 +37554,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1173805165}
+  - component: {fileID: 1173805166}
   m_Layer: 0
-  m_Name: Colored Door Set
-  m_TagString: ColoredCrystalDoor
+  m_Name: Colored Crystal Door Set
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37527,6 +37579,22 @@ Transform:
   - {fileID: 108667825}
   m_Father: {fileID: 126119303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1173805166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173805164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
 --- !u!1001 &1174704591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39657,11 +39725,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199708, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: RedCrystalDoor
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39669,7 +39737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.9
+      value: 1.6000004
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41590,15 +41658,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199708, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_Name
-      value: Blue Door Right
+      value: Green Door Right
       objectReference: {fileID: 0}
     - target: {fileID: 199708, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_TagString
-      value: GreenDoor
+      value: GreenCrystalDoor
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.50005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41606,7 +41674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 124.09998
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42118,6 +42186,10 @@ PrefabInstance:
     - target: {fileID: 189180, guid: a6ac4bd5202435c4aa5edad1f2fb53b9, type: 3}
       propertyPath: m_Name
       value: Dust Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 189180, guid: a6ac4bd5202435c4aa5edad1f2fb53b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479680, guid: a6ac4bd5202435c4aa5edad1f2fb53b9, type: 3}
       propertyPath: m_LocalScale.x
@@ -52262,9 +52334,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1638755956}
+  - component: {fileID: 1638755957}
   m_Layer: 0
-  m_Name: Red Door Set
-  m_TagString: RedCrystalDoor
+  m_Name: Red Crystal Door Set
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52278,7 +52351,7 @@ Transform:
   m_GameObject: {fileID: 1638755955}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 35, y: 0, z: -12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52286,6 +52359,22 @@ Transform:
   - {fileID: 1322396945}
   m_Father: {fileID: 126119303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638755957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638755955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
 --- !u!1 &1641959253 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3786873135405515593, guid: 4ebf2bdcb1a975344a6642cbcd65c1a6, type: 3}
@@ -63415,9 +63504,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1970012052}
+  - component: {fileID: 1970012053}
   m_Layer: 0
-  m_Name: Green Door Set
-  m_TagString: GreenCrystalDoor
+  m_Name: Green Crystal Door Set
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63431,7 +63521,7 @@ Transform:
   m_GameObject: {fileID: 1970012051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.5, y: 0, z: 122.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -63439,6 +63529,22 @@ Transform:
   - {fileID: 1318222992}
   m_Father: {fileID: 126119303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1970012053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970012051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
 --- !u!1001 &1974511842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65058,6 +65164,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 102810, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 707290610}
+    - targetCorrespondingSourceObject: {fileID: 161392, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1003572103}
   m_SourcePrefab: {fileID: 100100000, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
 --- !u!1 &2032497455 stripped
 GameObject:
@@ -69106,7 +69215,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5849062237316332065, guid: aaeb0e25ce1539e46a11e8ba451bf66d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5393580880040996864}
+      addedObject: {fileID: 5393580880040996868}
+    - targetCorrespondingSourceObject: {fileID: 5849062237316332065, guid: aaeb0e25ce1539e46a11e8ba451bf66d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5393580880040996871}
   m_SourcePrefab: {fileID: 100100000, guid: aaeb0e25ce1539e46a11e8ba451bf66d, type: 3}
 --- !u!1 &2524809542527036682 stripped
 GameObject:
@@ -69227,7 +69339,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f98eaa5e96fce64cab04bdd099bb58d, type: 3}
---- !u!114 &4964751254432963103
+--- !u!114 &4964751254432963106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69239,10 +69351,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
-  RedCrystalDoor: {fileID: 0}
-  BlueCrystalDoor: {fileID: 0}
-  GreenCrystalDoor: {fileID: 0}
-  ColoredCrystalDoor: {fileID: 0}
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
+--- !u!65 &4964751254432963109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524809542527036682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5014802778941424449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69301,14 +69434,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1541458535405288514, guid: 579ee99dcb092824bb824287fd952390, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5955089732431780151}
+      addedObject: {fileID: 5955089732431780153}
+    - targetCorrespondingSourceObject: {fileID: 1541458535405288514, guid: 579ee99dcb092824bb824287fd952390, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5955089732431780155}
   m_SourcePrefab: {fileID: 100100000, guid: 579ee99dcb092824bb824287fd952390, type: 3}
 --- !u!1 &5393580880040996862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5849062237316332065, guid: aaeb0e25ce1539e46a11e8ba451bf66d, type: 3}
   m_PrefabInstance: {fileID: 1705572525350702034}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5393580880040996864
+--- !u!114 &5393580880040996868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69320,16 +69456,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
-  RedCrystalDoor: {fileID: 0}
-  BlueCrystalDoor: {fileID: 0}
-  GreenCrystalDoor: {fileID: 0}
-  ColoredCrystalDoor: {fileID: 0}
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
+--- !u!65 &5393580880040996871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393580880040996862}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5955089732431780150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1541458535405288514, guid: 579ee99dcb092824bb824287fd952390, type: 3}
   m_PrefabInstance: {fileID: 5014802778941424449}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5955089732431780151
+--- !u!114 &5955089732431780153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69341,10 +69498,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82f33ee3bf9da245b987c674b6316dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreeCrystalKeyPickup
-  RedCrystalDoor: {fileID: 0}
-  BlueCrystalDoor: {fileID: 0}
-  GreenCrystalDoor: {fileID: 0}
-  ColoredCrystalDoor: {fileID: 0}
+  RedCrystalDoors: {fileID: 0}
+  BlueCrystalDoors: {fileID: 0}
+  GreenCrystalDoors: {fileID: 0}
+  ColoredCrystalDoors: {fileID: 0}
+--- !u!65 &5955089732431780155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955089732431780150}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &6015437924097489083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3438249104210422326, guid: bf2c3f29f86a2414d89097fa8a7db327, type: 3}
@@ -69522,7 +69700,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8662111598200979653, guid: 462d191be7e1d6a49b04dfbbd385b152, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4964751254432963103}
+      addedObject: {fileID: 4964751254432963106}
+    - targetCorrespondingSourceObject: {fileID: 8662111598200979653, guid: 462d191be7e1d6a49b04dfbbd385b152, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4964751254432963109}
   m_SourcePrefab: {fileID: 100100000, guid: 462d191be7e1d6a49b04dfbbd385b152, type: 3}
 --- !u!1001 &9083278786709346031
 PrefabInstance:
