@@ -39,6 +39,10 @@ public class PlayerMoving : MonoBehaviour
         {
             jumpRequested = true; // capture edge in Update so it isn't missed
         }
+
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(Vector3.up * mouseX);
+
     }
 
     private void ApplyMovement()

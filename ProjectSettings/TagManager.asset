@@ -13,6 +13,12 @@ TagManager:
   - Wall1 (E)
   - Wall1 (S)
   - Wall1 (W)
+  - RedCrystalDoor
+  - BlueCrystalDoor
+  - GreenCrystalDoor
+  - YellowCrystalDoor
+  - PurpleCrystalDoor
+  - ColoredCrystalDoor
   layers:
   - Default
   - TransparentFX

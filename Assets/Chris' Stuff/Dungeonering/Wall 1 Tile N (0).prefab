@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6382485913693595315}
   - component: {fileID: 4547808761425953157}
   - component: {fileID: 7119737054943723637}
+  - component: {fileID: 2461162556949676481}
   m_Layer: 0
   m_Name: Wall 1 Tile N (0)
   m_TagString: Wall1 (N)
@@ -116,3 +117,25 @@ MonoBehaviour:
   - {fileID: 198756, guid: 340c9cec7d5a9fa44a3eabc7df30bf57, type: 3}
   - {fileID: 195876, guid: 672ee923d7f567d4999ca9b98280f884, type: 3}
   - {fileID: 198206, guid: 9f8634c7eb2d75149b0b37a811f69d18, type: 3}
+--- !u!64 &2461162556949676481
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207749939418624556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8153ff91c8b7c6c4ca02b27c13ec43df, type: 3}
