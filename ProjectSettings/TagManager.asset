@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - Door
+  - Key
+  - Chest
+  - Lid
+  - Teleporter
+  - Spawn
   layers:
   - Default
   - TransparentFX
