@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 91757800}
   - component: {fileID: 91757799}
   - component: {fileID: 91757798}
-  - component: {fileID: 91757797}
   m_Layer: 0
   m_Name: BlueKey
   m_TagString: Untagged
@@ -141,21 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &91757797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91757796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7f035e3a50d1142899e4a49a1c2b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KeyPickup
-  RedDoor: {fileID: 0}
-  GreenDoor: {fileID: 0}
-  BlueDoor: {fileID: 0}
 --- !u!114 &91757798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +868,6 @@ GameObject:
   - component: {fileID: 715967181}
   - component: {fileID: 715967180}
   - component: {fileID: 715967179}
-  - component: {fileID: 715967185}
   m_Layer: 0
   m_Name: GreenKey
   m_TagString: Untagged
@@ -1020,21 +1003,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &715967185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715967178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7f035e3a50d1142899e4a49a1c2b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KeyPickup
-  RedDoor: {fileID: 0}
-  GreenDoor: {fileID: 0}
-  BlueDoor: {fileID: 0}
 --- !u!1 &740562045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1275,7 @@ MonoBehaviour:
   moveSpeed: 10
   gravity: 9.81
   jumpForce: 0
+  defaultSpeed: 10
 --- !u!143 &813491905
 CharacterController:
   m_ObjectHideFlags: 0
