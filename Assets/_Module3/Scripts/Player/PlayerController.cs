@@ -61,4 +61,18 @@ public class PlayerController : MonoBehaviour
         Vector3 motion = new Vector3(movementData.x, jumpVelocity.y, movementData.z) * Time.fixedDeltaTime;
         controller.Move(motion);
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody rb = hit.collider.attachedRigidbody;
+        if (rb == null) return;
+
+        // Direction the player is moving
+        Vector3 pushDir = hit.moveDirection;
+        pushDir.y = 0; // no vertical push
+
+        float pushForce = 0.5f;
+        rb.AddForce(pushDir * pushForce, ForceMode.Impulse);
+    }
+
 }
