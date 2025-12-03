@@ -16,9 +16,14 @@ public class LiveSampleLighting : MonoBehaviour
     Light flickerLight3;
     Light flickerLight4;
     private Light[] lights;
+    public Color32 colorA = new Color32(255, 215, 120, 255);
+    public Color32 colorB = new Color32(255, 200, 80, 255);
+    public float speed = 2f;
+    public float waveOffset = 0f;
     public bool isOn;
     public float maxWait = 1;
     public float maxFlicker = 0.2f;
+    public float scale = 0.5f;
 
     float timer;
     float interval;
@@ -32,73 +37,61 @@ public class LiveSampleLighting : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        TimerInterval();
+        LightWave();
     }
 
-    void lightManagment()
+    #region
+    //void TimerInterval() 
+    //{
+    //    timer += Time.deltaTime;
+
+    //    if (timer > interval)
+    //    {
+    //        // Ensure selectedLight index is within bounds
+    //        int index = Mathf.Clamp((int)selectedLight, 0, lights.Length - 1);
+
+    //        ToggleLight(lights[index]);
+    //    }
+    //}
+    #endregion
+
+    void LightWave()
     {
-       targetLight = null;
-
-        switch (selectedLight)
         {
-            case LightChoice.Light1:
-                targetLight = flickerLight1;
-                ToggleLight(targetLight);
-                break;
-            case LightChoice.Light2:
-                targetLight = flickerLight2;
-                ToggleLight(targetLight);
-                break;
-            case LightChoice.Light3:
-                targetLight = flickerLight3;
-                ToggleLight(targetLight);
-                break;
-            case LightChoice.Light4:
-                targetLight = flickerLight4;
-                ToggleLight(targetLight);
-                break;
-            default:
-                targetLight.enabled = true;
-                break;
+            float wave = (Mathf.Sin(Time.time * speed) + 1f) * 0.5f;
+
+            Color newColor = Color.Lerp(colorA, colorB, wave);
+
+            foreach (Light l in lights)
+            {
+                if (l != null)
+                    l.color = newColor;
+                l.intensity = scale;
+            }
         }
 
-    }
-
-    void TimerInterval() 
-    {
-        timer += Time.deltaTime;
-
-        if (timer > interval)
+        void ToggleLight(Light target)
         {
-            // Ensure selectedLight index is within bounds
-            int index = Mathf.Clamp((int)selectedLight, 0, lights.Length - 1);
+            if (target == null)
+            {
+                return;
+            }
 
-            ToggleLight(lights[index]);
+            isOn = !isOn;
+            target.enabled = isOn;
+
+            if (isOn)
+            {
+                interval = Random.Range(0, maxWait);
+            }
+            else
+            {
+                interval = Random.Range(0, maxFlicker);
+            }
+
+            timer = 0;
         }
-    }
-
-    void ToggleLight(Light target)
-    {
-        if (target == null) 
-        {
-            return;
-        }
-
-        isOn = !isOn;
-        target.enabled = isOn;
-
-        if (isOn)
-        {
-            interval = Random.Range(0, maxWait);
-        }
-        else
-        {
-            interval = Random.Range(0, maxFlicker);
-        }
-
-        timer = 0;
     }
 }

@@ -44,8 +44,8 @@ Light:
   m_Type: 0
   m_Color: {r: 0.99215686, g: 0.6313726, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 36
+  m_SpotAngle: 156
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -82,7 +82,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -141,8 +141,8 @@ Light:
   m_Type: 0
   m_Color: {r: 0.99215686, g: 0.6313726, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 36
+  m_SpotAngle: 156
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -179,7 +179,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -203,6 +203,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3405256122985293769}
+  - component: {fileID: 5035467419062479942}
+  - component: {fileID: 7681466507590632154}
+  - component: {fileID: 869415089637713680}
+  - component: {fileID: 958650600166607588}
   m_Layer: 0
   m_Name: Torch Large
   m_TagString: Untagged
@@ -231,6 +235,106 @@ Transform:
   - {fileID: 5796969818785425960}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5035467419062479942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002275450302701737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3a902d6fb792b47855d4fe6717d76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiveSampleLighting
+  selectedLight: 0
+  colorA:
+    serializedVersion: 2
+    rgba: 4286109695
+  colorB:
+    serializedVersion: 2
+    rgba: 4283484415
+  speed: 2
+  waveOffset: 0
+  isOn: 0
+  maxWait: 1
+  maxFlicker: 0.2
+  scale: 0.5
+--- !u!114 &7681466507590632154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002275450302701737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3a902d6fb792b47855d4fe6717d76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiveSampleLighting
+  selectedLight: 0
+  colorA:
+    serializedVersion: 2
+    rgba: 4286109695
+  colorB:
+    serializedVersion: 2
+    rgba: 4283484415
+  speed: 2
+  waveOffset: 0
+  isOn: 0
+  maxWait: 1
+  maxFlicker: 0.2
+  scale: 0.5
+--- !u!114 &869415089637713680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002275450302701737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3a902d6fb792b47855d4fe6717d76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiveSampleLighting
+  selectedLight: 0
+  colorA:
+    serializedVersion: 2
+    rgba: 4286109695
+  colorB:
+    serializedVersion: 2
+    rgba: 4283484415
+  speed: 2
+  waveOffset: 0
+  isOn: 0
+  maxWait: 1
+  maxFlicker: 0.2
+  scale: 0.5
+--- !u!114 &958650600166607588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002275450302701737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3a902d6fb792b47855d4fe6717d76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiveSampleLighting
+  selectedLight: 0
+  colorA:
+    serializedVersion: 2
+    rgba: 4286109695
+  colorB:
+    serializedVersion: 2
+    rgba: 4283484415
+  speed: 2
+  waveOffset: 0
+  isOn: 0
+  maxWait: 1
+  maxFlicker: 0.2
+  scale: 0.5
 --- !u!1 &6671707051710735907
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,8 +379,8 @@ Light:
   m_Type: 0
   m_Color: {r: 0.99215686, g: 0.6313726, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 36
+  m_SpotAngle: 156
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -313,7 +417,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -372,8 +476,8 @@ Light:
   m_Type: 0
   m_Color: {r: 0.99215686, g: 0.6313726, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 36
+  m_SpotAngle: 156
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -410,7 +514,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -492,36 +596,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 197870, guid: 8995caca94342db4c831349441b30d1f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7523547565697782166}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8995caca94342db4c831349441b30d1f, type: 3}
---- !u!1 &302407930262079254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 197870, guid: 8995caca94342db4c831349441b30d1f, type: 3}
-  m_PrefabInstance: {fileID: 302407930262275064}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7523547565697782166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302407930262079254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3a902d6fb792b47855d4fe6717d76b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiveSampleLighting
-  pointLight: 0
-  flickerLight1: {fileID: 1105992541068225655}
-  flickerLight2: {fileID: 5206043076239769199}
-  flickerLight3: {fileID: 2091866351201730081}
-  flickerLight4: {fileID: 6229014418583815439}
-  isOn: 0
-  maxWait: 1
-  maxFlicker: 0.2
 --- !u!4 &302407930262324146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475210, guid: 8995caca94342db4c831349441b30d1f, type: 3}
