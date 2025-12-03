@@ -911,8 +911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  gravity: 5
-  jumpForce: 1
+  gravity: 15
+  jumpForce: 3
   defaultSpeed: 5
   movementReference: {fileID: 3040477990232840075}
 --- !u!114 &2873401930203894051
