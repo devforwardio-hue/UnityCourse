@@ -1,55 +1,69 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovementReal : MonoBehaviour
 {
-  public float moveSpeed = 10f;
-  public float defaultSpeed = 10f;
+    public float moveSpeed = 10f;
+    public float defaultSpeed = 10f;
 
-  void Start()
+    private Rigidbody rb;
+    private Vector3 moveDir;
+
+    void Start()
     {
-      moveSpeed = defaultSpeed;
+        rb = GetComponent<Rigidbody>();
+        moveSpeed = defaultSpeed;
+
+        rb.freezeRotation = true; // prevent tipping over
     }
 
     void Update()
     {
-
-      HandleRawMovement();
+        HandleRawMovement();
     }
-private void HandleRawMovement()
-{
-    // STEP 1 — Get keyboard input (horizontal = A/D, vertical = W/S)
-    float horizontal = Input.GetAxisRaw("Horizontal");
-    float vertical = Input.GetAxisRaw("Vertical");
 
-    // STEP 2 — Combine the inputs into a single direction vector
-    Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
-
-    if (inputDirection.magnitude >= 0.1f)
+    private void FixedUpdate()
     {
-        // STEP 3 — Get the direction the camera is facing
-        Transform cam = Camera.main.transform;
+        // Use physics movement
+        if (moveDir.sqrMagnitude > 0.01f)
+        {
+            rb.MovePosition(rb.position + moveDir * moveSpeed * Time.fixedDeltaTime);
 
-        // STEP 4 — Convert input direction from WORLD space into CAMERA space
-        Vector3 moveDir =
-            cam.forward * inputDirection.z +
-            cam.right * inputDirection.x;
-
-        moveDir.y = 0f; // keep movement flat
-        moveDir.Normalize();
-
-        // STEP 5 — Move the player
-        transform.position += moveDir * moveSpeed * Time.deltaTime;
-
-        // STEP 6 — Rotate player to face the direction they are moving
-        Quaternion targetRotation = Quaternion.LookRotation(moveDir);
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            targetRotation,
-            10f * Time.deltaTime
-        );
+            Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+            rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, 10f * Time.fixedDeltaTime));
+        }
     }
-}
 
+    private void HandleRawMovement()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (inputDirection.magnitude >= 0.1f)
+        {
+            Transform cam = Camera.main.transform;
+
+            Vector3 camForward = cam.forward;
+            camForward.y = 0f;
+            camForward.Normalize();
+
+            Vector3 camRight = cam.right;
+            camRight.y = 0f;
+            camRight.Normalize();
+
+            moveDir = 
+                camForward * inputDirection.z +
+                camRight * inputDirection.x;
+
+            moveDir.Normalize();
+        }
+        else
+        {
+            moveDir = Vector3.zero;
+        }
+    }
 
   #region OldMovementCode
   //if a condition is met,

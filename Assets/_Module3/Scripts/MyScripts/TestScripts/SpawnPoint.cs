@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class SpawnPoint : MonoBehaviour
 {
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
@@ -11,25 +18,25 @@ public class SpawnPoint : MonoBehaviour
         if (SpawnManager.Instance == null) return;
 
         string spawnName = SpawnManager.Instance.spawnPointName;
-        if (string.IsNullOrEmpty(spawnName)) 
+        if (string.IsNullOrEmpty(spawnName))
         {
             Debug.Log("SpawnPointSetter: spawnName empty on scene load.");
             return;
         }
 
         Debug.Log($"SpawnPointSetter: Scene loaded: {scene.name}. Looking for '{spawnName}'.");
+
         GameObject spawnPoint = GameObject.Find(spawnName);
 
         if (spawnPoint != null)
         {
-            transform.position = spawnPoint.transform.position;
-            transform.rotation = spawnPoint.transform.rotation;
+            rb.position = spawnPoint.transform.position;
+            rb.rotation = spawnPoint.transform.rotation;
 
-            // Move player into the loaded scene so it shows under that scene's hierarchy
             SceneManager.MoveGameObjectToScene(gameObject, scene);
 
             Debug.Log($"SpawnPointSetter: Moved player to spawn '{spawnName}' in scene {scene.name}");
-            // Clear spawn to avoid accidental reuse
+
             SpawnManager.Instance.spawnPointName = "";
         }
         else
