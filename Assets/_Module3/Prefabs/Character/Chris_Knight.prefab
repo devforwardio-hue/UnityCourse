@@ -825,7 +825,6 @@ GameObject:
   - component: {fileID: 7721477285713703904}
   - component: {fileID: -2734728070294263451}
   - component: {fileID: 1884963011171712841}
-  - component: {fileID: 2873401930203894051}
   m_Layer: 0
   m_Name: Chris_Knight
   m_TagString: Player
@@ -849,6 +848,7 @@ Transform:
   - {fileID: 8831549776632698330}
   - {fileID: 6977340661097309844}
   - {fileID: 2946817589931378314}
+  - {fileID: 7953705195838003230}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7721477285713703904
@@ -915,23 +915,6 @@ MonoBehaviour:
   jumpForce: 3
   defaultSpeed: 5
   movementReference: {fileID: 3040477990232840075}
---- !u!114 &2873401930203894051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860314474389372390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22805b9cb4564034e864bf60f3e6a9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
-  orbiterRef: {fileID: 0}
-  turnSpeed: 260
-  turnStartDelay: 0.1
-  startTurnThreshold: 2
-  turnSmoothTime: 0.1
 --- !u!1 &2040439601978450078
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +2854,115 @@ Transform:
   - {fileID: 3604914267964267589}
   m_Father: {fileID: 304546227592927167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8250384417690583890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7953705195838003230}
+  - component: {fileID: 2804112159991002555}
+  - component: {fileID: 8214195219497272193}
+  - component: {fileID: 8821579770520506059}
+  m_Layer: 0
+  m_Name: MainCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7953705195838003230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250384417690583890}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.1453326, y: -0, z: -0, w: 0.98938286}
+  m_LocalPosition: {x: 0.25, y: 2.1338959, z: -2.3413258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3040477990232840075}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2804112159991002555
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250384417690583890}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 41
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &8214195219497272193
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250384417690583890}
+  m_Enabled: 1
+--- !u!114 &8821579770520506059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250384417690583890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567603d1c4e90a2488767270621266fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraControl
+  zoomSpeed: 10
+  inwardRange: 2
+  outwardRange: 4
+  smoothTime: 0.08
 --- !u!1 &8547781802333974554
 GameObject:
   m_ObjectHideFlags: 0
