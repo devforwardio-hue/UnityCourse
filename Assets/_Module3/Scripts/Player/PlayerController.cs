@@ -8,16 +8,18 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float defaultSpeed = 10f;
 
-  private CharacterController controller;
-    private Vector3 jumpVelocity; 
+    public Transform movementReference;
+
+    private CharacterController controller;
+    private Vector3 jumpVelocity;
 
     private Vector2 input;
     private bool jumpRequested;
 
     void Awake()
     {
-      moveSpeed = defaultSpeed;
-      controller = GetComponent<CharacterController>();
+        moveSpeed = defaultSpeed;
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -39,17 +41,22 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            jumpRequested = true; // capture edge in Update so it isn't missed
+            jumpRequested = true;
         }
     }
 
     private void ApplyMovement()
     {
-        Vector3 movementData = new Vector3(input.x, 0f, input.y) * moveSpeed;
+        Transform refT = movementReference != null ? movementReference : transform;
+        Vector3 refForward = Vector3.ProjectOnPlane(refT.forward, Vector3.up).normalized;
+        Vector3 refRight = Vector3.ProjectOnPlane(refT.right, Vector3.up).normalized;
+        Vector3 moveDir = refRight * input.x + refForward * input.y;
+        if (moveDir.sqrMagnitude > 1f) moveDir.Normalize();
+        moveDir *= moveSpeed;
 
         if (controller.isGrounded)
         {
-            if (jumpVelocity.y < 0f) jumpVelocity.y = -2f; // keep grounded ?? 
+            if (jumpVelocity.y < 0f) jumpVelocity.y = -2f;
             if (jumpRequested)
             {
                 jumpVelocity.y = jumpForce;
@@ -58,7 +65,8 @@ public class PlayerController : MonoBehaviour
 
         jumpRequested = false;
         jumpVelocity.y += -gravity * Time.fixedDeltaTime;
-        Vector3 motion = new Vector3(movementData.x, jumpVelocity.y, movementData.z) * Time.fixedDeltaTime;
+
+        Vector3 motion = new Vector3(moveDir.x, jumpVelocity.y, moveDir.z) * Time.fixedDeltaTime;
         controller.Move(motion);
     }
 
