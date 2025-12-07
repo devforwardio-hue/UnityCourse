@@ -825,7 +825,6 @@ GameObject:
   - component: {fileID: 7721477285713703904}
   - component: {fileID: -2734728070294263451}
   - component: {fileID: 1884963011171712841}
-  - component: {fileID: 2873401930203894051}
   m_Layer: 0
   m_Name: Chris_Knight
   m_TagString: Player
@@ -915,23 +914,6 @@ MonoBehaviour:
   jumpForce: 3
   defaultSpeed: 5
   movementReference: {fileID: 3040477990232840075}
---- !u!114 &2873401930203894051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860314474389372390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22805b9cb4564034e864bf60f3e6a9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
-  orbiterRef: {fileID: 0}
-  turnSpeed: 260
-  turnStartDelay: 0.1
-  startTurnThreshold: 2
-  turnSmoothTime: 0.1
 --- !u!1 &2040439601978450078
 GameObject:
   m_ObjectHideFlags: 0

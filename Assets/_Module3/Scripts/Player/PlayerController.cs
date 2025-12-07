@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float defaultSpeed = 10f;
 
-    // If set, movement will be relative to this transform's orientation (e.g., camera/orbiter)
-    // Otherwise it uses the player's own transform.
     public Transform movementReference;
 
     private CharacterController controller;
