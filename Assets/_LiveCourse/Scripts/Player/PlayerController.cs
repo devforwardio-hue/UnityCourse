@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
@@ -10,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform movementReference;
 
-    private CharacterController controller;
+    public CharacterController controller;
     private Vector3 jumpVelocity;
 
     private Vector2 input;
@@ -19,7 +18,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         moveSpeed = defaultSpeed;
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
     }
 
     void Update()
