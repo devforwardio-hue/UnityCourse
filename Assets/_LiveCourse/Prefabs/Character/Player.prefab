@@ -1509,6 +1509,7 @@ MonoBehaviour:
   pitchSpeed: 140
   minPitch: -35
   maxPitch: 70
+  invertY: 0
 --- !u!1 &4132437576067552197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946817589931378314}
+  - component: {fileID: 4654575383917605440}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1694,6 +1696,22 @@ Transform:
   - {fileID: 4033406295307179524}
   m_Father: {fileID: 3040477990232840075}
   m_LocalEulerAnglesHint: {x: 0, y: -6.17, z: 0}
+--- !u!114 &4654575383917605440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342556627940777767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb9d1f130dac1e4499f133161cd33da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
+  forwardRef: {fileID: 8831549776632698330}
+  turnSpeed: 360
+  turnStartDelay: 0.1
+  startTurnThreshold: 0
 --- !u!1 &4889563691069376570
 GameObject:
   m_ObjectHideFlags: 0
