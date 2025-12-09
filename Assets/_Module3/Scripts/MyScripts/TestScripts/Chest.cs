@@ -11,72 +11,58 @@ public class Chest : MonoBehaviour
     public bool keyGiven = false;
 
     [Header("Optional 3D Key Object")]
-    public GameObject keyObject;  // Drag your in-scene key object here
+    public GameObject keyObject;
 
     [Header("Lid Settings")]
     public Transform lid;
     public float openSpeed = 2f;
     public float openAngle = -70f;
 
-    private bool isOpen = false;
+    public bool isOpen = false;
+
     private Quaternion initialRotation;
     private Quaternion targetRotation;
 
     private void Start()
     {
         initialRotation = lid.localRotation;
-        targetRotation = Quaternion.Euler(
-            lid.localEulerAngles + new Vector3(openAngle, 0, 0)
-        );
+        targetRotation = Quaternion.Euler(lid.localEulerAngles + new Vector3(openAngle, 0, 0));
     }
 
-    private void OnTriggerStay(Collider other)
+    public void TryInteract(Inventory inv)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (inv == null) return;
 
-        Inventory inv = other.GetComponent<Inventory>();
-
-        // ===============================
-        // LOCKED
-        // ===============================
+        // Chest locked?
         if (isLocked)
         {
-            if (inv != null && inv.HasKey(requiredKeyID))
+            if (inv.HasKey(requiredKeyID))
             {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    isLocked = false;
-                    inv.RemoveKey(requiredKeyID);
-                    Debug.Log("Chest unlocked!");
-                }
+                isLocked = false;
+                inv.RemoveKey(requiredKeyID);
+                Debug.Log("Chest unlocked!");
             }
-
-            return;
+            else
+            {
+                Debug.Log("Chest is locked.");
+                return;
+            }
         }
 
-        // ===============================
-        // UNLOCKED BUT CLOSED
-        // ===============================
+        // Open chest
         if (!isOpen)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            isOpen = true;
+            Debug.Log("Chest opened!");
+
+            if (!keyGiven)
             {
-                isOpen = true;
-                Debug.Log("Chest opened!");
+                inv.AddKey(chestKeyID);
+                keyGiven = true;
+                Debug.Log("Player received key: " + chestKeyID);
 
-                // Give key to player
-                if (!keyGiven && inv != null)
-                {
-                    inv.AddKey(chestKeyID);
-                    keyGiven = true;
-
-                    Debug.Log("Player received key: " + chestKeyID);
-
-                    // Destroy or hide the key object
-                    if (keyObject != null)
-                        Destroy(keyObject);
-                }
+                if (keyObject != null)
+                    Destroy(keyObject);
             }
         }
     }
@@ -86,10 +72,7 @@ public class Chest : MonoBehaviour
         if (isOpen)
         {
             lid.localRotation = Quaternion.Slerp(
-                lid.localRotation,
-                targetRotation,
-                Time.deltaTime * openSpeed
-            );
+                lid.localRotation, targetRotation, Time.deltaTime * openSpeed);
         }
     }
 }

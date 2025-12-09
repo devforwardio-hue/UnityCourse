@@ -2,36 +2,68 @@ using UnityEngine;
 
 public class CameraOrbiter : MonoBehaviour
 {
+    [Tooltip("The target the camera orbits (player)")]
+    public Transform target;
 
-  public Transform target;
-  public float rotateSensitivityX = 180f;
-  public Vector3 defaultPos;
+    [Header("Sensitivity")]
+    public float sensitivityX = 180f;
+    public float sensitivityY = 180f;
 
-  void Awake()
-  {
+    [Header("Pitch Limits")]
+    public float minPitch = -40f;
+    public float maxPitch = 70f;
 
-  }
+    [Header("Orbit Settings")]
+    [Tooltip("Starting orbit distance (computed from current position if 0)")]
+    public float distance = 6f;
 
-  void FixedUpdate()
+    private float yaw;
+    private float pitch;
+
+    void Start()
     {
-      OrbitObject();
+        if (target != null)
+        {
+            Vector3 dir = transform.position - target.position;
+            distance = dir.magnitude;
+
+            // compute initial yaw/pitch so current camera position is preserved
+            Vector3 normalized = dir.normalized;
+            pitch = Mathf.Asin(normalized.y) * Mathf.Rad2Deg * -1f; // approximate pitch
+            yaw = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            // fallback if weird values:
+            // yaw = transform.eulerAngles.y; pitch = transform.eulerAngles.x;
+        }
     }
 
-  void OrbitObject()
-  {
-    bool rmb = Input.GetMouseButton(1);
-    if (target == null) return;
-    Cursor.lockState = rmb ? CursorLockMode.Locked : CursorLockMode.None;
-    Cursor.visible = !rmb;
-    if (!rmb) return;
-    //cant go beyond, if rmb is false.
+    void LateUpdate()
+    {
+        FullOrbit();
+    }
 
-    float mouseX = Input.GetAxis("Mouse X");
-    //figure out, the math, of the camera looking at the object for any angle, to then begin rotating around - so the yaw needs to be known according to our orbiting direction.
-    float expectedYaw = mouseX * rotateSensitivityX * Time.fixedDeltaTime;
-    if (Mathf.Abs(expectedYaw) <= 0f) return;
+    void FullOrbit()
+    {
+        if (target == null) return;
 
-    transform.RotateAround(target.position, Vector3.up, expectedYaw);
-    transform.LookAt(target.position, Vector3.up);
-  }
+        bool rmb = Input.GetMouseButton(1);
+
+        Cursor.lockState = rmb ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !rmb;
+
+        if (rmb)
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+
+            yaw += mouseX * sensitivityX * Time.deltaTime;
+            pitch -= mouseY * sensitivityY * Time.deltaTime;
+            pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
+        }
+
+        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
+        Vector3 offset = rotation * new Vector3(0f, 0f, -distance);
+
+        transform.position = target.position + offset;
+        transform.rotation = rotation;
+    }
 }
