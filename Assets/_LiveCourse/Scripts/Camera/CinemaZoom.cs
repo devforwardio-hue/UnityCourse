@@ -24,6 +24,7 @@ public class CinemaZoom : MonoBehaviour
 
         body = vcam != null ? vcam.GetCinemachineComponent(CinemachineCore.Stage.Body) : null;
         var tpf = body as CinemachineThirdPersonFollow;
+
         if (tpf != null)
         {
             baseDistance = tpf.CameraDistance;
@@ -41,16 +42,20 @@ public class CinemaZoom : MonoBehaviour
         var tpf = body as CinemachineThirdPersonFollow;
         if (tpf == null) return;
 
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        float scroll = Input.GetAxis("Mouse ScrollWheel");//normalization of 0-1 based on scroll input
         if (!Mathf.Approximately(scroll, 0f))
         {
+        //baseDistance = 1, - inward = 0, 
             float min = baseDistance - inwardRange;
             float max = baseDistance + outwardRange;
-            targetDistance = Mathf.Clamp(targetDistance - scroll * scrollSpeed, min, max);
+            float activeValue = targetDistance - scroll * scrollSpeed;
+            targetDistance = Mathf.Clamp(activeValue, min, max);
+            Debug.Log(targetDistance + "Target Clamp");
         }
 
         float current = tpf.CameraDistance;
         float next = Mathf.SmoothDamp(current, targetDistance, ref velocity, smoothTime);
         tpf.CameraDistance = next;
+    Debug.Log(next + "Current movement towards reaching targetDistance");
     }
 }

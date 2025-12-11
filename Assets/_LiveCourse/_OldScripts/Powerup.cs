@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class Powerup : MonoBehaviour
+public class Powerups : MonoBehaviour
 {
     public enum PowerupType
     {
