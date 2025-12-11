@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class OLD_Obstacle : MonoBehaviour
 {
     public enum Axis { X, Y, Z }
 
