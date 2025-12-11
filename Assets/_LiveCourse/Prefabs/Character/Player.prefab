@@ -1486,13 +1486,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3533602045332514050}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00025464612, y: 0.006806976, z: 0.0010489726, w: 0.9999763}
+  m_LocalRotation: {x: -0.00006230805, y: 0.18611084, z: 0.0010776389, w: 0.98252815}
   m_LocalPosition: {x: 0, y: 1.172, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3040477990232840075}
-  m_LocalEulerAnglesHint: {x: -0.03, y: 0.78, z: 0.12}
+  m_LocalEulerAnglesHint: {x: -0.03, y: 21.452, z: 0.12}
 --- !u!114 &39219356638400671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,7 +1692,7 @@ Transform:
   m_GameObject: {fileID: 4342556627940777767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.05381742, z: 0, w: 0.99855083}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.006, y: 0, z: 0.028}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1711,8 +1711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb9d1f130dac1e4499f133161cd33da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
-  forwardRef: {fileID: 0}
-  turnSpeed: 360
+  forwardRef: {fileID: 8831549776632698330}
+  turnSpeed: 180
   turnStartDelay: 0.1
   startTurnThreshold: 3
 --- !u!1 &4889563691069376570

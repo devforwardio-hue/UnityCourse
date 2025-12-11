@@ -87,22 +87,12 @@ public class Powerup : MonoBehaviour
         }
 
         case PowerupType.Scale:
-          {
-            ScaleOld scaleScript = col.GetComponent<ScaleOld>();
-            if (scaleScript != null)
-            {
-              float targetSize = scaleScript.defaultSize + powerValue;
-              scaleScript.TriggerGrowth(targetSize);
-            }
-
-            if (buff_scaleScript != null)
-            {
-              buff_scaleScript.maxTime = maxTime + Time.time;
-              buff_scaleScript.isActive = true;
-            }
+        {
+            //in crease the players scale on x, y, and z, to the powerup value.
+            //apply the buff_scaleScript management details
             Debug.Log("Scale");
-            Destroy(this.gameObject);
-          break;
+            //Destroy(this.gameObject);
+            break;
         }
         default:
         {
