@@ -824,9 +824,9 @@ GameObject:
   - component: {fileID: 3040477990232840075}
   - component: {fileID: 7721477285713703904}
   - component: {fileID: -2734728070294263451}
-  - component: {fileID: 1884963011171712841}
+  - component: {fileID: 1552721338364575566}
   m_Layer: 0
-  m_Name: Chris_Knight
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,7 +897,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1884963011171712841
+--- !u!114 &1552721338364575566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -911,9 +911,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   gravity: 15
-  jumpForce: 3
+  jumpForce: 4
   defaultSpeed: 5
-  movementReference: {fileID: 3040477990232840075}
+  movementReference: {fileID: 8831549776632698330}
+  controller: {fileID: -2734728070294263451}
 --- !u!1 &2040439601978450078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8831549776632698330}
+  - component: {fileID: 1991728814863908914}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -1484,13 +1486,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3533602045332514050}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.028800368, y: 0.006773728, z: 0.0008507649, w: 0.99956197}
   m_LocalPosition: {x: 0, y: 1.172, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3040477990232840075}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.3, y: 0.78, z: 0.12}
+--- !u!114 &1991728814863908914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533602045332514050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2888144bfc6122543af9e26a516b5322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateAnchor
+  yawSpeed: 180
+  pitchSpeed: 140
+  minPitch: -35
+  maxPitch: 70
+  invertY: 0
 --- !u!1 &4132437576067552197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,8 +1672,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946817589931378314}
+  - component: {fileID: 4654575383917605440}
   m_Layer: 0
-  m_Name: Root
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,14 +1688,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4342556627940777767}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.05381742, z: 0, w: 0.99855083}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4033406295307179524}
   m_Father: {fileID: 3040477990232840075}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -6.17, z: 0}
+--- !u!114 &4654575383917605440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342556627940777767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb9d1f130dac1e4499f133161cd33da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
+  forwardRef: {fileID: 8831549776632698330}
+  turnSpeed: 360
+  turnStartDelay: 0.1
+  startTurnThreshold: 0
 --- !u!1 &4889563691069376570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,7 +2697,7 @@ GameObject:
   - component: {fileID: 6977340661097309844}
   - component: {fileID: 2689909934832354671}
   m_Layer: 0
-  m_Name: Character_Hero_Knight_Male
+  m_Name: Model_Render
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2675,7 +2711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8028479809535928207}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
