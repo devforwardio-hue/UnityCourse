@@ -1,4 +1,4 @@
-﻿%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
 OcclusionCullingSettings:
@@ -4331,4 +4331,3 @@ SceneRoots:
   - {fileID: 1236858880}
   - {fileID: 2021475602}
   - {fileID: 1200933958}
-
