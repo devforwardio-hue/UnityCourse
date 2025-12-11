@@ -1,5 +1,4 @@
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.UIElements;
 
 public class Buff_Scale : MonoBehaviour
@@ -21,25 +20,11 @@ public class Buff_Scale : MonoBehaviour
     {
       Debug.Log("Player Found");
     }
-=======
-
-public class Buff_Scale : MonoBehaviour
-{
-
-  //make sure it returns to the default scale, which is always the default object scale of 1.
-  private void Awake()
-  {
-  }
-  void Start()
-  {
-
->>>>>>> main
   }
 
   // Update is called once per frame
   void Update()
   {
-<<<<<<< HEAD
     StartTimer();
 
   }
@@ -59,11 +44,4 @@ public class Buff_Scale : MonoBehaviour
       }
     }
   }
-=======
-   
-
-  }
-
-
->>>>>>> main
 }
