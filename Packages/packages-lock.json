@@ -179,11 +179,7 @@
     },
     "com.unity.settings-manager": {
       "version": "2.1.0",
-<<<<<<< HEAD
       "depth": 1,
-=======
-      "depth": 2,
->>>>>>> main
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
