@@ -825,9 +825,9 @@ GameObject:
   - component: {fileID: 7721477285713703904}
   - component: {fileID: -2734728070294263451}
   - component: {fileID: 1884963011171712841}
-  - component: {fileID: 3330426425332508700}
+  - component: {fileID: 6537353268418504936}
   m_Layer: 0
-  m_Name: Chris_Knight
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,7 +915,8 @@ MonoBehaviour:
   jumpForce: 3
   defaultSpeed: 5
   movementReference: {fileID: 3040477990232840075}
---- !u!114 &3330426425332508700
+  controller: {fileID: 0}
+--- !u!114 &6537353268418504936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -924,14 +925,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1860314474389372390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22805b9cb4564034e864bf60f3e6a9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eb9d1f130dac1e4499f133161cd33da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
-  orbiterRef: {fileID: 0}
+  forwardRef: {fileID: 0}
   turnSpeed: 360
   turnStartDelay: 0.1
-  startTurnThreshold: 2
-  turnSmoothTime: 0
+  startTurnThreshold: 3
 --- !u!1 &2040439601978450078
 GameObject:
   m_ObjectHideFlags: 0
