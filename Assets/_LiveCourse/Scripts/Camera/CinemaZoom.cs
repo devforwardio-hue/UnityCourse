@@ -56,6 +56,6 @@ public class CinemaZoom : MonoBehaviour
         float current = tpf.CameraDistance;
         float next = Mathf.SmoothDamp(current, targetDistance, ref velocity, smoothTime);
         tpf.CameraDistance = next;
-    Debug.Log(next + "Current movement towards reaching targetDistance");
+    //Debug.Log(next + "Current movement towards reaching targetDistance");
     }
 }

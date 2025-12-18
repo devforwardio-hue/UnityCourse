@@ -42,8 +42,8 @@ public class _RotateAnchor : MonoBehaviour
       float mouseX = Input.GetAxis("Mouse X");
       float mouseY = Input.GetAxis("Mouse Y");
 
-    Debug.Log("Mouse X" + mouseX);
-    Debug.Log("Mouse Y" + mouseY);
+    //Debug.Log("Mouse X" + mouseX);
+    //Debug.Log("Mouse Y" + mouseY);
     if(Mathf.Approximately(mouseX, 0f) && Mathf.Approximately (mouseY, 0f)) return;
 
     if (!Mathf.Approximately(mouseX, 0f))
