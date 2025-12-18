@@ -247,6 +247,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &527173371883436003
 GameObject:
@@ -367,6 +368,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &859706062804284815
 GameObject:
@@ -583,6 +585,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1236308743248291083
 GameObject:
@@ -672,6 +675,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1385717458182750024
 GameObject:
@@ -825,7 +829,6 @@ GameObject:
   - component: {fileID: 7721477285713703904}
   - component: {fileID: -2734728070294263451}
   - component: {fileID: 1884963011171712841}
-  - component: {fileID: 6537353268418504936}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -914,24 +917,8 @@ MonoBehaviour:
   gravity: 15
   jumpForce: 3
   defaultSpeed: 5
-  movementReference: {fileID: 3040477990232840075}
-  controller: {fileID: 0}
---- !u!114 &6537353268418504936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860314474389372390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb9d1f130dac1e4499f133161cd33da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
-  forwardRef: {fileID: 0}
-  turnSpeed: 360
-  turnStartDelay: 0.1
-  startTurnThreshold: 3
+  movementReference: {fileID: 8831549776632698330}
+  controller: {fileID: -2734728070294263451}
 --- !u!1 &2040439601978450078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1071,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2606592760135523586
 GameObject:
@@ -1268,6 +1256,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3138242928941617429
 GameObject:
@@ -1357,6 +1346,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3183417220196257666
 GameObject:
@@ -1446,6 +1436,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3205953680112578217
 GameObject:
@@ -1487,6 +1478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8831549776632698330}
+  - component: {fileID: 5959979199863319238}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -1509,6 +1501,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3040477990232840075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5959979199863319238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533602045332514050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2888144bfc6122543af9e26a516b5322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateAnchor
+  yawSpeed: 180
+  pitchSpeed: 140
+  minPitch: -35
+  maxPitch: 70
+  invertY: 0
 --- !u!1 &4132437576067552197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1670,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4342556627940777767
 GameObject:
@@ -1671,6 +1681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946817589931378314}
+  - component: {fileID: 5349649964346201790}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -1694,6 +1705,22 @@ Transform:
   - {fileID: 4033406295307179524}
   m_Father: {fileID: 3040477990232840075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5349649964346201790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342556627940777767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb9d1f130dac1e4499f133161cd33da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
+  forwardRef: {fileID: 8831549776632698330}
+  turnSpeed: 360
+  turnStartDelay: 0.1
+  startTurnThreshold: 3
 --- !u!1 &4889563691069376570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2293,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7407896376241401423
 GameObject:
@@ -2482,6 +2510,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7757588160243474775
 GameObject:
@@ -2603,6 +2632,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7893843029719779919
 GameObject:
@@ -2747,6 +2777,7 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
