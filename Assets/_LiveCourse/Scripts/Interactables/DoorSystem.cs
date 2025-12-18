@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class DoorSystem : MonoBehaviour
 {
+
   public float openSpeed = 180f;
   public float openDegrees = -90f;
-  public float keyID = 123f;
 
   public bool isOpen = false;
-  public bool unlocked = false;
+  public bool unlocked = true;
   public bool inRange = false;
 
-  private GameObject interactUI;
-  private CanvasGroup interactGroup; 
-  public GameObject doorCol;
-  
+  public GameObject interactUI;
+  public CanvasGroup interactGroup;
   public Transform doorAnchor;
 
   Quaternion closedRot;
   Quaternion openRot;
+  public GameObject doorCol;
 
-  void Awake()
+  private void Awake()
   {
     interactUI = GameObject.Find("InteractUI");
     if (interactUI != null)
@@ -29,60 +28,53 @@ public class DoorSystem : MonoBehaviour
       {
         interactGroup.alpha = 0f;
       }
-      
     }
-    else
+  }
+
+
+    void Start()
     {
-      Debug.Log("No InteractUI Found");
+        closedRot = doorAnchor.rotation;
+        openRot = closedRot * Quaternion.Euler(0f, openDegrees, 0f);//we check the math, to get the differnce, from our initial rotation. 
+  
     }
-  }
 
-  void Start()
-  {
-      closedRot = doorAnchor.rotation;
-      openRot = closedRot * Quaternion.Euler(0f, openDegrees, 0f);
-  }
+    
+    void Update()
+    {
+      HandleInteract();
+      HandleRotate();
+    }
 
-  void Update()
-  {
-     HandleInteract();
-  }
 
-  private void FixedUpdate()
+  private void OnTriggerEnter(Collider obj)
   {
-    HandleRotate();
-  }
+    bool isPlayer = obj.CompareTag("Player");
 
-  private void OnTriggerEnter(Collider collision)
-  {
-    if (!collision.gameObject.CompareTag("Player")) return;
+    if (!isPlayer) return;
+    //never read further
 
     inRange = true;
-    if (interactGroup != null)
-    {
-      interactGroup.alpha = 1f;
-      interactGroup.interactable = true;
-      interactGroup.blocksRaycasts = true;
-    }
+    interactGroup.alpha = 1f;    
   }
 
-  private void OnTriggerExit(Collider collision)
+  private void OnTriggerExit(Collider obj)
   {
-    if (!collision.gameObject.CompareTag("Player")) return;
+    bool isPlayer = obj.CompareTag("Player");
+
+    if (!isPlayer) return;
+    //never read further
 
     inRange = false;
-    if (interactGroup != null)
-    {
-      interactGroup.alpha = 0f;
-      interactGroup.interactable = false;
-      interactGroup.blocksRaycasts = false;
-    }
+    interactGroup.alpha = 0f;
   }
 
   void HandleInteract()
   {
     if (!inRange) return;
-    if (Input.GetKeyDown(KeyCode.F))
+    bool interactPress = Input.GetKeyDown(KeyCode.F);
+
+    if (interactPress)
     {
       if (!unlocked) return;
       isOpen = !isOpen;
@@ -91,18 +83,10 @@ public class DoorSystem : MonoBehaviour
 
   void HandleRotate()
   {
-    
-    Quaternion target = isOpen ? openRot : closedRot;
-
+    Quaternion target = isOpen ? openRot : closedRot;/// why do?
     float remaining = Quaternion.Angle(doorAnchor.rotation, target);
-    bool isMoving = remaining > 0.1f; //unlikely to ever see a perfect 0
-
-    doorCol.SetActive(!isMoving); 
-
-    doorAnchor.rotation = Quaternion.RotateTowards(
-        doorAnchor.rotation,
-        target,
-        openSpeed * Time.deltaTime
-    );
+    bool isMoving = remaining > 0.1f; // safety check
+    doorCol.SetActive(!isMoving);
+    doorAnchor.rotation = Quaternion.RotateTowards(doorAnchor.rotation, target, openSpeed * Time.deltaTime);
   }
 }

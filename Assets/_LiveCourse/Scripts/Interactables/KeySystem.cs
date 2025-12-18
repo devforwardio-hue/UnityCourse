@@ -1,65 +1,79 @@
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class KeySystem : MonoBehaviour
 {
+
+  public bool inRange = false;
+  
   public GameObject keyItem;
   public Vector3 defaultKeyPos;
-  public Vector3 pressedKeyPos;
-  public DoorSystem doorSystem;
+  public Vector3 pressKeyPos;
 
-  public GameObject interactCanvas;
-  private CanvasGroup interactGroup;
-  public bool inRange;
+  public GameObject interactUI;
+  public CanvasGroup interactGroup;
+  public DoorSystem activeDoor;//actually incorrect atm.
 
-  // Start is called once before the first execution of Update after the MonoBehaviour is created
+
 
   private void Awake()
   {
-    defaultKeyPos = keyItem.transform.localPosition;
-    pressedKeyPos = new (0f, 0.75f, 0f);
-
-    interactGroup = interactCanvas.GetComponent<CanvasGroup>();
-    if (interactGroup != null)
+    interactUI = GameObject.Find("InteractUI");
+    if (interactUI != null)
     {
-      interactGroup.alpha = 0f;
+      interactGroup = interactUI.GetComponent<CanvasGroup>();
+      if (interactGroup != null)
+      {
+        interactGroup.alpha = 0f;
+      }
     }
   }
+
+
+  void Start()
+  {
+    defaultKeyPos = keyItem.transform.localPosition;
+    pressKeyPos = new (0f, 0.75f, 0f);
+
+  }
+
+
   void Update()
   {
     HandleInteract();
   }
 
-  private void FixedUpdate()
-  {
-    
-  }
 
-  private void OnTriggerEnter(Collider collision)
+  private void OnTriggerEnter(Collider obj)
   {
-    if (!collision.gameObject.CompareTag("Player")) return;
+    bool isPlayer = obj.CompareTag("Player");
+
+    if (!isPlayer) return;
+    //never read further
 
     inRange = true;
     interactGroup.alpha = 1f;
-
   }
 
-  private void OnTriggerExit(Collider collision)
+  private void OnTriggerExit(Collider obj)
   {
-    if (!collision.gameObject.CompareTag("Player")) return;
+    bool isPlayer = obj.CompareTag("Player");
+
+    if (!isPlayer) return;
+    //never read further
 
     inRange = false;
     interactGroup.alpha = 0f;
-
   }
 
   void HandleInteract()
   {
-    if (!inRange || doorSystem.isOpen) return;
-    if (Input.GetKeyDown(KeyCode.F))
+    if (!inRange || activeDoor.isOpen) return;
+    bool interactPress = Input.GetKeyDown(KeyCode.F);
+    
+    if (interactPress )
     {
-      doorSystem.unlocked = !doorSystem.unlocked;
-      keyItem.transform.localPosition = doorSystem.unlocked ? pressedKeyPos : defaultKeyPos;
+      activeDoor.unlocked = !activeDoor.unlocked;
+      keyItem.transform.localPosition = activeDoor.unlocked ? pressKeyPos : defaultKeyPos;
     }
   }
 }
