@@ -247,6 +247,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &527173371883436003
 GameObject:
@@ -367,6 +368,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &859706062804284815
 GameObject:
@@ -583,6 +585,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1236308743248291083
 GameObject:
@@ -672,6 +675,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1385717458182750024
 GameObject:
@@ -824,7 +828,7 @@ GameObject:
   - component: {fileID: 3040477990232840075}
   - component: {fileID: 7721477285713703904}
   - component: {fileID: -2734728070294263451}
-  - component: {fileID: 1552721338364575566}
+  - component: {fileID: 67239511334773270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -897,7 +901,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1552721338364575566
+--- !u!114 &67239511334773270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -910,8 +914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  gravity: 15
-  jumpForce: 4
+  gravity: 9.81
+  jumpForce: 7
   defaultSpeed: 5
   movementReference: {fileID: 8831549776632698330}
   controller: {fileID: -2734728070294263451}
@@ -1067,6 +1071,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2606592760135523586
 GameObject:
@@ -1251,6 +1256,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3138242928941617429
 GameObject:
@@ -1340,6 +1346,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3183417220196257666
 GameObject:
@@ -1429,6 +1436,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3205953680112578217
 GameObject:
@@ -1470,7 +1478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8831549776632698330}
-  - component: {fileID: 1991728814863908914}
+  - component: {fileID: 39219356638400671}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -1486,14 +1494,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3533602045332514050}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.028800368, y: 0.006773728, z: 0.0008507649, w: 0.99956197}
-  m_LocalPosition: {x: 0, y: 1.172, z: 0}
+  m_LocalRotation: {x: -0.00006230805, y: 0.18611084, z: 0.0010776389, w: 0.98252815}
+  m_LocalPosition: {x: 0, y: 1.172, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3040477990232840075}
-  m_LocalEulerAnglesHint: {x: 3.3, y: 0.78, z: 0.12}
---- !u!114 &1991728814863908914
+  m_LocalEulerAnglesHint: {x: -0.03, y: 21.452, z: 0.12}
+--- !u!114 &39219356638400671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1502,14 +1510,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3533602045332514050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2888144bfc6122543af9e26a516b5322, type: 3}
+  m_Script: {fileID: 11500000, guid: 21e8adc1fafae764999bc9d997d11f85, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotateAnchor
+  m_EditorClassIdentifier: Assembly-CSharp::_RotateAnchor
   yawSpeed: 180
   pitchSpeed: 140
   minPitch: -35
   maxPitch: 70
-  invertY: 0
+  invertY: 1
+  requireRightClick: 0
+  defaultCameraPos: {x: 0, y: 0, z: 0}
+  defaultCameraRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4132437576067552197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1673,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4342556627940777767
 GameObject:
@@ -1672,7 +1684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946817589931378314}
-  - component: {fileID: 4654575383917605440}
+  - component: {fileID: 12644171318616449}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1689,14 +1701,14 @@ Transform:
   m_GameObject: {fileID: 4342556627940777767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.05381742, z: 0, w: 0.99855083}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.006, y: 0, z: 0.028}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4033406295307179524}
   m_Father: {fileID: 3040477990232840075}
   m_LocalEulerAnglesHint: {x: 0, y: -6.17, z: 0}
---- !u!114 &4654575383917605440
+--- !u!114 &12644171318616449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1709,9 +1721,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRotationMovement
   forwardRef: {fileID: 8831549776632698330}
-  turnSpeed: 360
+  turnSpeed: 180
   turnStartDelay: 0.1
-  startTurnThreshold: 0
+  startTurnThreshold: 3
 --- !u!1 &4889563691069376570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,6 +2296,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7407896376241401423
 GameObject:
@@ -2500,6 +2513,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7757588160243474775
 GameObject:
@@ -2621,6 +2635,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7893843029719779919
 GameObject:
@@ -2765,6 +2780,7 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0

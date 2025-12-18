@@ -7,7 +7,7 @@ using UnityEngine;
     Jump,
     Scale
   }
-public class LivePowerup : MonoBehaviour
+public class Powerup : MonoBehaviour
 {
   public PowerupType type;
   public float powerValue = 100f;
