@@ -23,7 +23,7 @@ public class PlayerRotationMovement : MonoBehaviour
             return;
         }
 
-        Vector3 heading = Vector3.ProjectOnPlane(forwardRef.forward, Vector3.up);
+        Vector3 heading = Vector3.ProjectOnPlane(forwardRef.forward, Vector3.up);//
         if (heading.sqrMagnitude < 1e-6f)
         {
             turningActive = false;
