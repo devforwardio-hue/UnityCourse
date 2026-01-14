@@ -54,7 +54,7 @@ public enum RotationAxis
         xpos = posMoving;
         currentAxisPosition = obstacleTransform.position.x;
         offsetFromStart = obstacleTransform.position.x - startPosition.x;
-        Debug.Log(offsetFromStart);
+        //Debug.Log(offsetFromStart);
         break;
       case MovementAxis.Y:
         ypos = posMoving;
