@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Obstacle.old : MonoBehaviour
+public class ObstacleOld : MonoBehaviour
 {
     //create minDistance, maxDistance as floats because I need decimal access.
     public float minDistance = 1.0f;
